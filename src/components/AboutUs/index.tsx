@@ -29,7 +29,7 @@ export const AboutUs = () => {
             <span className="uppercase xs:text-5xl text-8xl text-right Sfera dark:cardOutline">mobile</span>
             <span className="uppercase xs:text-md text-lg pl-2 xs:text-left md:text-center Sfera text-primary">developer</span>
             {
-              sm || md && <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary rounded-md items-center flex justify-center p-3 hover:cursor-pointer mt-10 text-primary hover:text-white w-3/5">
+              (sm || md) && <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary rounded-md items-center flex justify-center p-3 hover:cursor-pointer mt-10 text-primary hover:text-white w-3/5">
                 <span className="uppercase text-center text-sm Sfera hover:cursor-pointer">{t('get_resume')}</span>
               </div>
             }

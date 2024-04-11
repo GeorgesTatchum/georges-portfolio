@@ -1,9 +1,9 @@
 import useTranslation from "next-translate/useTranslation";
 import SwitchLang from "../core/SwitchLang";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import SwitchTheme from "../core/SwitchTheme";
 import Link from "next/link";
+import { LightningChargeFill } from "react-bootstrap-icons";
 
 
 export default function Navbar(props: any) {
@@ -28,8 +28,8 @@ export default function Navbar(props: any) {
     return (
         <nav className={`w-full py-4 sticky top-0 flex bg-transparent z-50 backdrop-blur-xl ${scrolled ?? 'text-white'}`} id='navbar'>
             <div className="justify-between flex w-full max-w-6xl mx-auto px-4">
-                <Link href='#' className="flex items-center">
-                    <Image src="/charge_icon.svg" alt="charge_icon" height={24} width={17} />
+                <Link href='/' className="flex items-center">
+                    <LightningChargeFill size={24} color="#7B00FF" />
                     <span className={`uppercase text-lg pl-2 text-center Sfera dark:cardOutline hover:cursor-pointer xs:hidden mdd:hidden`}>georges tatchum</span>
                 </Link>
                 <div className="flex justify-between items-center xs:w-3/4 md:justify-around">

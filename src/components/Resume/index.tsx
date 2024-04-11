@@ -1,16 +1,17 @@
 import React from 'react'
-import Image from 'next/image'
 import { CodeBlock } from '../CodeBlock'
 import { aboutMeData, aboutMeData2 } from '@/models/data/about_me'
 import useTranslation from 'next-translate/useTranslation'
 import * as Icon from 'react-bootstrap-icons'
 import Link from 'next/link'
 import useMediaQueryHook from '@/hooks/useBreakpoints'
+import { useTheme } from 'next-themes'
 
 export default function Resume() {
     const { t } = useTranslation('common')
+    const { theme } = useTheme()
     const { lgd } = useMediaQueryHook()
-    const skills = ['skill_one', 'skill_two', 'skill_tree', 'skill_one', 'skill_two', 'skill_tree', 'skill_one', 'skill_two', 'skill_tree']
+    const skills = ['pROFESSIONNAL', 'Regarding', 'RIGOUSOUS', 'ATTENTIVE', 'ATTENTIVE', 'logic', 'Dynamic', 'Proactif', 'Diplomate', 'Enthousiaste']
     return (
         <section
             className='relative w-full flex flex-col'
@@ -19,12 +20,12 @@ export default function Resume() {
             <div className='w-full -top-5 mdd:top-1/4 flex max-w-6xl mx-auto px-4'>
                 <div className='flex justify-between gap-7'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5'>
-                        <div className='w-full z-0'> <CodeBlock description={aboutMeData} /> </div>
+                        <div className='w-full z-0'> <CodeBlock description={aboutMeData} className={`${theme === 'dark' ? 'border-gradient-dark' : 'border-gradient'}`} /> </div>
 
                         <div
                             className='w-full md:h-full self-end md:self-start mdd:flex mdd:flex-col md:justify-between z-10 translate-y-4 mdd:translate-y-0 mdd:gap-2'
                         >
-                            <CodeBlock description={aboutMeData2} />
+                            <CodeBlock description={aboutMeData2} className={`${theme === 'dark' ? 'border-gradient-dark' : 'border-gradient'}`} />
                             {lgd && <ResumeContent className='flex flex-col justify-between lg:hidden mt-4 gap-4' />}
                         </div>
                     </div>

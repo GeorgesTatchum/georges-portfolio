@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import useTranslation from "next-translate/useTranslation";
-
-import * as Icon from 'react-bootstrap-icons';
+import { BrightnessHighFill, Laptop, MoonFill } from "react-bootstrap-icons";
 
 
 export default function SwitchTheme() {
@@ -48,7 +47,7 @@ export default function SwitchTheme() {
   return (
     <div className="relative text-left inline-block">
       <div className="cursor-pointer" onClick={(e) => setIsOpen(!isOpen)} id="theme-menu">
-        {activeTheme === 'dark' ? <Icon.BrightnessHighFill size={24} color="#7B00FF" /> : activeTheme === 'system' ? <Icon.Laptop size={24} color="#7B00FF" /> : <Icon.MoonFill size={24} color="#7B00FF" />}
+        {activeTheme === 'dark' ? <BrightnessHighFill size={24} color="#7B00FF" /> : activeTheme === 'system' ? <Laptop size={24} color="#7B00FF" /> : <MoonFill size={24} color="#7B00FF" />}
       </div>
       {
         isOpen &&
@@ -59,7 +58,7 @@ export default function SwitchTheme() {
               role="menuitem"
               id="theme-item-0"
               onClick={() => { handleChange('light') }}>
-              <Icon.BrightnessHighFill size={16} />
+              <BrightnessHighFill size={16} />
               {t('light')}
             </button>
 
@@ -68,7 +67,7 @@ export default function SwitchTheme() {
               role="menuitem"
               id="theme-item-1"
               onClick={() => { handleChange('dark') }}>
-              <Icon.MoonFill size={16} />
+              <MoonFill size={16} />
               {t('dark')}
             </button>
 
@@ -77,7 +76,7 @@ export default function SwitchTheme() {
               role="menuitem"
               id="theme-item-2"
               onClick={() => { handleChange('system') }}>
-              <Icon.Laptop size={16} />
+              <Laptop size={16} />
               {t('system')}
             </button>
 

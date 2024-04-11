@@ -27,7 +27,7 @@ export const CodeBlock = (props: { description: string, className?: string }) =>
     // }, [description]);
 
     return (
-        <div className={`flex flex-col gap-3 p-3 border-2 border-gray rounded-lg dark:bg-[#0A1A22] w-full text-sm ${className}`}>
+        <div className={`flex flex-col gap-3 p-3 border-2 dark:bg-[#0A1A22] w-full text-sm ${className}`}>
             <div className='flex gap-1'>
                 {
                     colors.map((e, index) => (

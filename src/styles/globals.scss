@@ -152,8 +152,26 @@ input::-webkit-inner-spin-button {
   transition: width 0.3s ease;
 }
 
-.block-gradiant {
-  background: linear-gradient(to top, #00000080, #00000050);
+.block-gradient {
+  background: linear-gradient(to bottom, #00000080, #00000050);
   background-position: center;
   background-size: contain;
+}
+
+.border-gradient {
+  border: double 0.5px #7B7B7B;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#383838, #7B7B7B, #FFFFFF);
+  background-origin: border-box;
+  background-clip: unset;
+  border-image-slice: 1;
+  border-radius: 8px;
+}
+
+.border-gradient-dark {
+  border: double 0.5px #7B7B7B;
+  background-image: linear-gradient(#0A1A22, #0A1A22), linear-gradient(#383838, #7B7B7B, #FFFFFF);
+  background-origin: border-box;
+  background-clip: unset;
+  border-image-slice: 1;
+  border-radius: 8px;
 }
