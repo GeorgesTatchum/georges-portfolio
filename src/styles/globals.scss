@@ -151,3 +151,9 @@ input::-webkit-inner-spin-button {
 .underline-animation {
   transition: width 0.3s ease;
 }
+
+.block-gradiant {
+  background: linear-gradient(to top, #00000080, #00000050);
+  background-position: center;
+  background-size: contain;
+}

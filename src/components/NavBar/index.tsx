@@ -39,7 +39,7 @@ export default function Navbar(props: any) {
                     <div className="w-4" />
                     <Link href='#my_resume'>
                         <span className="uppercase lg:text-sm md:text-xs p-2 Sfera hover:outline hover:outline-offset-0 hover:outline-primary 
-                    // hover:cursor-pointer hover:transform transition-colors duration-75 xs:hidden text-center">{t('get_resume')}</span>
+                    // hover:cursor-pointer hover:transform transition-colors duration-75 xs:hidden sm:hidden text-center">{t('get_resume')}</span>
                     </Link>
 
                     <div className="w-4" />
