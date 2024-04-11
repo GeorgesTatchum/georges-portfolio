@@ -35,7 +35,7 @@ export const AboutUs = () => {
             }
             <div className='w-full contents'>
               <div className='w-3/5 xs:w-full xs:text-start text-end mt-10'>
-                <span className=' font-semibold'>
+                <span className=' font-normal'>
                   Intro Text if you have anything to put as introduction so put a Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, et quae! Aperiam hic ut !
                 </span>
               </div>

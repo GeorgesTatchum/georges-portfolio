@@ -14,9 +14,9 @@ export default function Resume() {
     const skills = ['pROFESSIONNAL', 'Regarding', 'RIGOUSOUS', 'ATTENTIVE', 'ATTENTIVE', 'logic', 'Dynamic', 'Proactif', 'Diplomate', 'Enthousiaste']
     return (
         <section
-            className='relative w-full flex flex-col'
+            className='relative w-full flex flex-col bg-contain bg-no-repeat'
             id="my_resume"
-            style={{ background: `url(/color_splash.svg)`, backgroundRepeat: 'no-repeat', backdropFilter: 'blur(10px)' }}>
+            style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat' }}>
             <div className='w-full -top-5 mdd:top-1/4 flex max-w-6xl mx-auto px-4'>
                 <div className='flex justify-between gap-7'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5'>
@@ -31,8 +31,7 @@ export default function Resume() {
                     </div>
                     <ResumeContent className='flex flex-col justify-between mdd:hidden' />
                 </div>
-            </div>
-            <div className='px-4 max-w-6xl mx-auto translate-y-5'>
+            </div><div className='px-4 max-w-6xl mx-auto translate-y-10'>
                 <div className='flex flex-col items-start'>
                     <span className='uppercase text-3xl Sfera'>
                         {t('my_soft_skill')}

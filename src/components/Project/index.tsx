@@ -3,7 +3,6 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import { projects_data } from '@/models/data/projects';
-import * as Icon from 'react-bootstrap-icons';
 
 
 const Project = () => {
@@ -68,25 +67,6 @@ const Project = () => {
                                 </>))
                             }
                         </div>
-                        {/* <div className='flex mx-auto'>
-                            <div className=' flex gap-5 self-center'>
-                                <div className='dark:bg-white bg-darkest h-4 w-4'>
-                                    <Icon.ArrowLeft className='' size={14} />
-                                </div>
-                                <div className='dark:bg-white bg-darkest h-4 w-4'>
-                                    <Icon.ArrowRight className='' size={14} />
-                                </div>
-
-                            </div>
-                            <div className='dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary hover:!text-white rounded-md items-center flex justify-center p-3 cursor-pointer mt-8'>
-                                <Link href='/project' className="flex items-center" target='_blank'>
-                                    <span className='text-base Sfera uppercase'>
-                                        {t('see_more')}
-                                    </span>
-
-                                </Link>
-                            </div>
-                        </div> */}
                     </div>
 
                 </div>
