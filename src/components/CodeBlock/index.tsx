@@ -27,7 +27,7 @@ export const CodeBlock = (props: { description: string, className?: string }) =>
     // }, [description]);
 
     return (
-        <div className={`flex flex-col gap-3 p-3 border-2 dark:bg-[#0A1A22] w-full text-sm ${className}`}>
+        <div className={`flex flex-col gap-3 p-3 dark:bg-[#0A1A22] w-full text-sm ${className}`}>
             <div className='flex gap-1'>
                 {
                     colors.map((e, index) => (
@@ -40,12 +40,12 @@ export const CodeBlock = (props: { description: string, className?: string }) =>
             <div className='flex'>
                 <div className={`flex-shrink-0 text-right pr-3`}>
                     {description.split("\n").map((_, index) => (
-                        <span key={index} className={`block text-[#666666] ${description.split("\n").length > 12 ? 'mt-0.5' : ''}`}>{index + 1}</span>
+                        <span key={index} className={`block text-[#666666] `}>{index + 1}</span>
                     ))}
                 </div>
-                <div className="flex-grow pl-3 ">
+                <div className="flex-grow pl-3 text-xs">
                     {description.split("\n").map((line, index) => (
-                        <div key={index + line[12]} className={`whitespace-pre-wrap`}>{parse(line)} </div>
+                        <div key={index + line[12]} className={`whitespace-pre-wrap ${description.split("\n").length <= 12 ? 'mt-0.5' : ''}`}>{parse(line)} </div>
                     ))}
                 </div>
             </div>

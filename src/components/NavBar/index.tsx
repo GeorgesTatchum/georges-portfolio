@@ -34,16 +34,16 @@ export default function Navbar(props: any) {
                 </Link>
                 <div className="flex justify-between items-center xs:w-3/4 md:justify-around">
                     <Link href='#my_project'>
-                        <span className="uppercase lg:text-sm md:text-xs p-2 Sfera hover:outline hover:outline-offset-0 hover:outline-primary hover:cursor-pointer">{t('t_projet')}</span>
+                        <span className="uppercase lg:text-sm md:text-xs p-2 Sfera hover:outline hover:outline-offset-0 dark:hover:outline-primary hover:outline-primary/60 hover:cursor-pointer">{t('t_projet')}</span>
                     </Link>
                     <div className="w-4" />
                     <Link href='#my_resume'>
-                        <span className="uppercase lg:text-sm md:text-xs p-2 Sfera hover:outline hover:outline-offset-0 hover:outline-primary 
+                        <span className="uppercase lg:text-sm md:text-xs p-2 Sfera hover:outline hover:outline-offset-0 dark:hover:outline-primary hover:outline-primary/60 
                     // hover:cursor-pointer hover:transform transition-colors duration-75 xs:hidden sm:hidden text-center">{t('get_resume')}</span>
                     </Link>
 
                     <div className="w-4" />
-                    <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary hover:!text-white rounded-md items-center flex justify-center p-3 hover:cursor-pointer xs:hidden">
+                    <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary dark:hover:!bg-primary/60 hover:!text-white rounded-md items-center flex justify-center p-3 hover:cursor-pointer xs:hidden">
                         <span className="uppercase text-center lg:text-sm md:text-xs Sfera hover:cursor-pointer">{t('send_msg')}</span>
                     </div>
                     <div className="w-4" />
