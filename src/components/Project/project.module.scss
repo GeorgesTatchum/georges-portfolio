@@ -1,8 +1,10 @@
 .cardWrapper {
-    @apply flex flex-col w-full translate-y-14 overflow-x-auto -ml-10 pl-10;
+    @apply flex w-full overflow-x-auto overflow-y-hidden -ml-10 mdd:-ml-5 pl-10;
     height: auto;
     width: 100%;
-    mask-image: linear-gradient(to left, #ffffff 95%, rgba(255, 255, 255, 0))
+    mask-image: linear-gradient(to left, #ffffff 95%, rgba(255, 255, 255, 0));
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 }
 
 

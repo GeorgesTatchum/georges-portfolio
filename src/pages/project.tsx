@@ -1,19 +1,29 @@
 import Footer from '@/components/Footer'
 import Layout from '@/components/Layout'
+import LoadingPage from '@/components/LoadingPage'
 import Navbar from '@/components/NavBar'
 import SliderCustom from '@/components/core/SliderCustom'
 import { projects_data } from '@/models/data/projects'
-import React from 'react'
+import { useEffect, useState } from 'react'
 
-const project = () => {
+export default function project() {
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 4500);
+    }, [])
     return (
         <Layout>
-            <Navbar />
-            <SliderCustom items={projects_data} autoSlide={true} />
+            {
+                isLoading ? <LoadingPage /> : <>
+                    <Navbar />
+                    <SliderCustom items={projects_data} autoSlide={true} />
 
-            <Footer />
+                    <Footer />
+                </>
+            }
+
         </Layout>
     )
 }
-
-export default project

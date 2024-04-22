@@ -22,7 +22,7 @@ const config: Config = {
 
       'xs': { 'max': '640px' },
 
-      'sm': { 'min': '640px', 'max': '767px' },
+      'sm': { 'min': '641px', 'max': '767px' },
       'smd': { 'max': '767px' },
 
       'md': { 'min': '768px', 'max': '1023px' },

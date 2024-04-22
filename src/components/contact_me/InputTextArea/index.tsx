@@ -1,41 +1,41 @@
 import ErrorForm from '../ErrorForm';
 
 export interface formInput {
-    label?:   string;
-    placeholder?:   any;
-    type?:   string;
-    controller:  any;
+    label?: string;
+    placeholder?: any;
+    type?: string;
+    controller: any;
     name: string;
     onChange?: any
     isRequired?: any
 }
 
-export default function InputTextArea(props: formInput){
+export default function InputTextArea(props: formInput) {
     const {
         label,
-        name, 
-        placeholder, 
-        isRequired, 
+        name,
+        placeholder,
+        isRequired,
         onChange,
-        controller 
+        controller
     } = props
 
-    return(
-        <div className={`m-3 md:mx-0`}>
-            {label ? <label className='font-bold capitalize'> {label} <b>{isRequired ? "*" : ""}</b> <br /></label>: ''}
+    return (
+        <div className={``}>
+            {label ? <label className='font-bold capitalize'> {label} <b>{isRequired ? "*" : ""}</b> <br /></label> : ''}
             <textarea
-                    {...controller(name, {
-                            required: isRequired ? true : false,
-                        }
-                        )}
-                    min ="0"
-                    className='rounded-md p-2 px-4 w-[41.5rem] md:w-full max-w-full h-40' 
-                    placeholder={placeholder}
-                    onKeyUp={onChange}
-                    />
-                    {
-                        (isRequired != undefined) && (isRequired[name] && <ErrorForm message={`${isRequired[name]?.message}`}/>)
-                    }
+                {...controller(name, {
+                    required: isRequired ? true : false,
+                }
+                )}
+                min="0"
+                className='rounded-md py-2 px-4 w-full h-40 Sfera placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10'
+                placeholder={placeholder}
+                onKeyUp={onChange}
+            />
+            {
+                (isRequired != undefined) && (isRequired[name] && <ErrorForm message={`${isRequired[name]?.message}`} />)
+            }
         </div>
     )
 }

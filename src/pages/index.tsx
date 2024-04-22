@@ -6,6 +6,7 @@ import Navbar from '@/components/NavBar'
 import Project from '@/components/Project'
 import Resume from '@/components/Resume'
 import Skills from '@/components/Skills'
+import Contact from '@/components/contact_me'
 import { useEffect, useState } from 'react'
 
 
@@ -25,6 +26,7 @@ export default function Home() {
           <Resume />
           <Skills />
           <Project />
+          <Contact />
           <Footer />
         </>
       }

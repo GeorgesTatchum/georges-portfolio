@@ -1,6 +1,8 @@
+import { useTheme } from 'next-themes'
 import React from 'react'
 
 function LoadingPage() {
+  const { theme } = useTheme()
   return (
     <div className='flex items-center justify-center h-screen xs:px-10 '>
       <svg id="loading" xmlns="http://www.w3.org/2000/svg" width="506" height="148" viewBox="0 0 506 148" fill="none">
