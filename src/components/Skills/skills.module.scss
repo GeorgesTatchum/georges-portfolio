@@ -1,0 +1,155 @@
+.container {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    z-index: 10;
+
+    &:after {
+        z-index: 1;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: inherit;
+    }
+
+    &:before {
+        z-index: 0;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: -2px;
+        border-radius: inherit;
+        background: linear-gradient(transparent, transparent) padding-box,
+            linear-gradient(215deg, #37353510 0%, #FFFFFF20 35.5%, #7B00FF 69.5%, #656565 85%) border-box;
+    }
+
+    .icon {
+        position: relative;
+        width: auto;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .imgBx {
+            position: absolute;
+            border-radius: 50%;
+            transition: 0.5s;
+            transform: rotate(calc(360deg/var(--count) * var(--i)));
+            z-index: 100;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border: solid 1px rgba($color: #ffffff, $alpha: 0.2);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+
+            &:before {
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: -3px;
+                border-radius: inherit;
+                background: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
+            }
+
+            .img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: none;
+                border-radius: 50%;
+                align-self: center;
+                transform: rotate(calc(-360deg/var(--count) * var(--i)));
+                transition: 0.5s;
+            }
+        }
+
+        .imgBx:hover {
+            cursor: pointer;
+            background: linear-gradient(#ffffff20, #ffffff10);
+            animation: bg-animation 5s alternate;
+
+            @keyframes bg-animation {
+                0% {
+                    background-position: top;
+                }
+
+                100% {
+                    background-position: bottom;
+                }
+            }
+        }
+    }
+}
+
+.cardProject {
+    @apply rounded-lg flex flex-col p-10 justify-start gap-5 border-white/20 border-2 z-30 w-72;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 0 25px 25px rgb(0, 0, 0, .2);
+
+}
+
+.animatedContent {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 80px;
+        border: 2px solid transparent;
+        border-left: 2px solid rgb(134, 23, 255);
+        border-right: 2px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        animation: animation_1 8s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 120px;
+        border: 2px solid transparent;
+        border-right: 2px solid rgb(134, 23, 255);
+        border-left: 2px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        animation: animation_2 10s linear infinite;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    @keyframes animation_1 {
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: 360deg;
+        }
+    }
+
+    @keyframes animation_2 {
+        100% {
+            rotate: 0deg;
+        }
+
+        0% {
+            rotate: 360deg;
+        }
+    }
+}

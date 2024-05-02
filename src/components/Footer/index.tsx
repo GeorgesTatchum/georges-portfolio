@@ -35,13 +35,13 @@ export default function Footer(props: any) {
                 </div>
                 <div className="h-10" />
                 <div className="w-3/5 xs:w-full text-start">
-                    <span className="font-semibold">
+                    <span className="font-normal">
                         End Text if you have anything to put as conclusion so put a
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, et quae! Aperiam hic ut placeat, inventore expedita aut perferendis necessitatibus sit facere eum vel animi similique accusamus, maiores eius labore!
                     </span>
                 </div>
                 <div className="flex justify-between items-center mt-[8%] mdd:flex-col-reverse mdd:items-start">
-                    <span className="font-semibold">
+                    <span className="font-normal">
                         © 2024  Georges Tatchum  all right reserved
                     </span>
                     <div className="flex justify-between mdd:mb-4 xs:flex-col">

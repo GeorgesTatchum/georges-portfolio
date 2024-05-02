@@ -21,7 +21,7 @@ export default function InputTextArea(props: formInput) {
     } = props
 
     return (
-        <div className={``}>
+        <div className={`w-full`}>
             {label ? <label className='font-bold capitalize'> {label} <b>{isRequired ? "*" : ""}</b> <br /></label> : ''}
             <textarea
                 {...controller(name, {
@@ -29,7 +29,7 @@ export default function InputTextArea(props: formInput) {
                 }
                 )}
                 min="0"
-                className='rounded-md py-2 px-4 w-full h-40 Sfera placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10'
+                className='rounded-md py-3 px-4 w-full h-40 Sfera text-xs placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10'
                 placeholder={placeholder}
                 onKeyUp={onChange}
             />

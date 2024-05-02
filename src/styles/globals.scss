@@ -180,3 +180,23 @@ input::-webkit-inner-spin-button {
   background-clip: text;
   color: transparent;
 }
+
+.borderGradient {
+  border: solid 2px transparent;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: -3px;
+    border-radius: 6px;
+    background: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
+  }
+
+  &.borderGradientDark:before {
+    background: linear-gradient(to top, #383838, #7B7B7B, #FFFFFF);
+  }
+}

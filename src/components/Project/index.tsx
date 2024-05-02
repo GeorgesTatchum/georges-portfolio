@@ -12,7 +12,7 @@ const Project = () => {
     const { theme } = useTheme()
 
     return (
-        <section className='w-full py-4 dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%]' id='my_project'>
+        <section className='w-full py-4 dark:bg-gradient-to-b from-[#030110_0%] to-[#030110_100%] border-none' id='my_project'>
             <div className='max-w-6xl mx-auto px-4 m-4'>
                 <span className='uppercase text-3xl Sfera'>
                     {t('my_project')}
@@ -26,7 +26,7 @@ const Project = () => {
                         height={80}
                         width={80}
                         alt="cover_image" />
-                    <div className='flex flex-col w-full h-full overflow-hidden lg:translate-y-14'>
+                    <div className='flex flex-col h-full overflow-hidden translate-y-14 mdd:translate-y-0'>
                         <div className={styles.cardWrapper}>
                             <div className='flex gap-6'>
                                 {
@@ -67,7 +67,7 @@ const Project = () => {
                                 }
                             </div>
                         </div>
-                        <div className='flex gap-[62%] mdd:gap-0 mdd:justify-between mdd:px-4 mt-5'>
+                        {/* <div className='flex max-w-6xl mx-auto mdd:px-4 mt-5 w-[80%] mdd:w-full justify-between'>
                             <div className='flex gap-6 items-center'>
                                 <div className='p-3 bg-black rounded-md dark:bg-white hover:cursor-pointer'>
                                     <ArrowLeft color={theme != 'dark' ? '#FFFFFF' : '#000000'} size={16} />
@@ -93,7 +93,7 @@ const Project = () => {
 
                                 </Link>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>

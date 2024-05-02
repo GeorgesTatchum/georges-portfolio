@@ -43,7 +43,7 @@ export default function InputTextField(props: formInput) {
     const fileInputClass = `block text-sm text-slate-500 file:mr-4 mt-2 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-deep-purple hover:file:bg-deep-purple/25`
 
     return (
-        <div className={``}>
+        <div className={`w-full`}>
             {label ? <label className='font-bold'> {label} <b>{isRequired ? "*" : ""}</b> <br /></label> : ''}
             <input
                 {...controller(name, {
@@ -51,7 +51,7 @@ export default function InputTextField(props: formInput) {
                 }
                 )}
                 type={type ? type : 'text'}
-                className={`${type == "file" ? fileInputClass : 'rounded-md py-3 px-4 focus:border-primary'} w-full Sfera placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10`}
+                className={`${type == "file" ? fileInputClass : 'rounded-md py-3 px-4 focus:border-primary'} w-full Sfera text-xs placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10`}
                 min={min ? min : 0}
                 max={max}
                 accept='.pdf, image/*, .docx'

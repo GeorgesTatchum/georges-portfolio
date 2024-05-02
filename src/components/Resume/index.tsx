@@ -14,18 +14,22 @@ export default function Resume() {
     const skills = ['pROFESSIONNAL', 'Regarding', 'RIGOUSOUS', 'ATTENTIVE', 'ATTENTIVE', 'logic', 'Dynamic', 'Proactif', 'Diplomate', 'Enthousiaste']
     return (
         <section
-            className='relative w-full flex flex-col bg-contain bg-no-repeat'
+            className=' w-full flex flex-col bg-contain bg-no-repeat'
             id="my_resume"
             style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat' }}>
             <div className='w-full -top-5 mdd:top-1/4 flex max-w-6xl mx-auto px-4'>
                 <div className='flex justify-between gap-7'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5'>
-                        <div className='w-full z-0'> <CodeBlock description={aboutMeData} className={`${theme === 'dark' ? 'border-gradient-dark' : 'border-gradient'}`} /> </div>
+                        <div className='w-full z-0'> <div className={`borderGradient dark:borderGradientDark flex-none relative`}>
+                            <CodeBlock description={aboutMeData} /> </div> </div>
 
                         <div
                             className='w-full md:h-full self-end md:self-start mdd:flex mdd:flex-col md:justify-between z-10 translate-y-4 mdd:translate-y-0 mdd:gap-2'
                         >
-                            <CodeBlock description={aboutMeData2} className={`${theme === 'dark' ? 'border-gradient-dark' : 'border-gradient'}`} />
+                            <div className={`borderGradient dark:borderGradientDark flex-none relative`}>
+                                <CodeBlock description={aboutMeData2} />
+                            </div>
+
                             {lgd && <ResumeContent className='flex flex-col justify-between lg:hidden mt-4 gap-4' />}
                         </div>
                     </div>
