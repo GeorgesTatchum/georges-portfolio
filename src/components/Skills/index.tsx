@@ -30,28 +30,25 @@ function Skills() {
                 <span className='mt-10 mb-10 text-md text-white'>
                     {t('favorite_tech')}
                 </span>
-                {/* <Image
-                        className='h-full w-auto mdd:max-w-[unset] smd:w-[200%] md:w-[125%] mdd:h-auto mdd:opacity-30'
-                        src={"/universe_bubble_bg.svg"}
-                        height={1000}
-                        width={1000}
-                        alt="cover_image" /> */}
-                <div className='flex justify-around w-full items-center mdd:flex-col md:gap-16 mb-6 smd:gap-3'>
-                    <div className={`${styles.cardProject}`}>
-                        {
-                            skills.map((e, index) => (
-                                <>
-                                    <div className='self-start'>
-                                        <span key={index} className="uppercase text-center text-sm Sfera text-white">{t(e)}</span>
-                                    </div>
-                                </>
+                <div className='flex justify-around w-full items-center mdd:flex-col md:gap-16 mb-6'>
+                    <div className={`${styles.bubble}`}>
+                        <div className={`${styles.cardProject}`}>
+                            {
+                                skills.map((e, index) => (
+                                    <>
+                                        <div className='self-start'>
+                                            <span key={index} className="uppercase text-center text-sm Sfera text-white">{t(e)}</span>
+                                        </div>
+                                    </>
 
-                            ))
-                        }
+                                ))
+                            }
+                        </div>
                     </div>
+
                     {/* first circle */}
                     <div
-                        className={`${styles.container} after:bg-darkest after:dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%] w-[550px] h-[550px] relative xs:scale-[.65] sm:scale-[.7]`}
+                        className={`${styles.container} after:bg-darkest after:dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%] w-[550px] h-[550px] relative xs:scale-[.6] sm:scale-[.7]`}
                     >
                         <div className={`${styles.icon} left-[-50%]`} style={{ '--count': 9, '--idx': 0 } as MyCustomCSS}>
                             {

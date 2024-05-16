@@ -9,14 +9,13 @@ import { useTheme } from 'next-themes'
 
 export default function Resume() {
     const { t } = useTranslation('common')
-    const { theme } = useTheme()
-    const { lgd } = useMediaQueryHook()
+    const { lgd, xl_b } = useMediaQueryHook()
     const skills = ['pROFESSIONNAL', 'Regarding', 'RIGOUSOUS', 'ATTENTIVE', 'ATTENTIVE', 'logic', 'Dynamic', 'Proactif', 'Diplomate', 'Enthousiaste']
     return (
         <section
-            className=' w-full flex flex-col bg-contain bg-no-repeat'
+            className='w-full flex flex-col bg-contain bg-no-repeat'
             id="my_resume"
-            style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat' }}>
+            style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: '40% 20%', backgroundSize: '500px' }}>
             <div className='w-full -top-5 mdd:top-1/4 flex max-w-6xl mx-auto px-4'>
                 <div className='flex justify-between gap-7'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5'>
@@ -30,7 +29,7 @@ export default function Resume() {
                                 <CodeBlock description={aboutMeData2} />
                             </div>
 
-                            {lgd && <ResumeContent className='flex flex-col justify-between lg:hidden mt-4 gap-4' />}
+                            {lgd && <ResumeContent className='flex flex-col justify-between lg:hidden gap-4' />}
                         </div>
                     </div>
                     <ResumeContent className='flex flex-col justify-between mdd:hidden' />

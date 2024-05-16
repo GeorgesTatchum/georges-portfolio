@@ -42,7 +42,7 @@ export default function Footer(props: any) {
                 </div>
                 <div className="flex justify-between items-center mt-[8%] mdd:flex-col-reverse mdd:items-start">
                     <span className="font-normal">
-                        © 2024  Georges Tatchum  all right reserved
+                        © {new Date().getFullYear()} Georges Tatchum  all right reserved
                     </span>
                     <div className="flex justify-between mdd:mb-4 xs:flex-col">
                         {

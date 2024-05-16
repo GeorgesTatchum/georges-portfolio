@@ -9,9 +9,9 @@ export const AboutUs = () => {
   return (
     <section className='h-[calc(100dvh-5rem)] max-h-[756px] mdd:h-auto w-full' id="about_us">
       <div className='relative flex h-full w-full'>
-        <div className='h-full mdd:overflow-x-hidden w-full flex mdd:justify-center' id='cover_image'>
+        <div className='h-full mdd:overflow-x-hidden w-full flex mdd:justify-center 2xl:justify-center' id='cover_image'>
           <Image
-            className='h-full  w-auto mdd:max-w-[unset] smd:w-[200%] md:w-[125%] mdd:h-auto mdd:opacity-30'
+            className='h-full  w-auto mdd:max-w-[unset] smd:w-[200%] md:w-[125%] 2xl:-translate-x-52 mdd:h-auto mdd:opacity-30'
             src={"/cover_image.svg"}
             height={1000}
             width={1000}

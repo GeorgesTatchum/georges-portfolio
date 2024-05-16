@@ -6,20 +6,20 @@ import Image from 'next/image';
 
 const dm_sans = DM_Sans(
     {
-      subsets: ['latin'],
-      weight: ['400', '500', '600', '700'],
-      display: 'swap',
+        subsets: ['latin'],
+        weight: ['400', '500', '600', '700'],
+        display: 'swap',
     }
-  )
+)
 const Content404 = () => {
-    const {t} = useTranslation('common')
-    return(
-        <div className="w-screen h-screen flex justify-center items-center">
+    const { t } = useTranslation('common')
+    return (
+        <div className="flex justify-center items-center h-[calc(100vh-80px)]">
             <div className="">
                 <div className="flex sm:flex-col sm:items-center">
                     <div className="flex items-center">
                         <div className="">
-                        <Image src="charge_icon.svg" alt="logo" width={50} height={50}/>
+                            <Image src="charge_icon.svg" alt="logo" width={50} height={50} />
                         </div>
                         <div className="flex px-6 border-r-2 sm:border-r-0 border-darkest dark:border-white">
                             <span className="text-6xl">
@@ -40,13 +40,11 @@ const Content404 = () => {
     )
 }
 
-export default function Custom_404(props: any){
-    return(
+export default function Custom_404(props: any) {
+    return (
         <Layout title="404 - Georges Tatchum">
-            <main className="min-h-screen w-full relative flex flex-col items-center">
-                <Navbar/>
-                <Content404/>
-            </main>
+            <Navbar />
+            <Content404 />
         </Layout>
     )
 }

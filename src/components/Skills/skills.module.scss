@@ -46,8 +46,8 @@
             overflow: hidden;
             display: flex;
             align-items: center;
-            border: solid 1px rgba($color: #ffffff, $alpha: 0.2);
-            backdrop-filter: blur(10px);
+            border: solid 2px rgba($color: #ffffff, $alpha: 0.2);
+            backdrop-filter: blur(40px);
             cursor: pointer;
 
             &:before {
@@ -94,12 +94,76 @@
     }
 }
 
-.cardProject {
-    @apply rounded-lg flex flex-col p-10 justify-start gap-5 border-white/20 border-2 z-30 w-72;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, .1);
-    box-shadow: 0 25px 25px rgb(0, 0, 0, .2);
 
+.cardProject {
+    @apply rounded-lg flex flex-col p-10 justify-start gap-5 border-white/20 border-2 z-30 w-80;
+    backdrop-filter: blur(40px);
+    background: rgba(255, 255, 255, .1);
+    box-shadow: -1em .1em 1em -2em rgba(255, 255, 255, .1),
+        1em .2em 1em -1em rgba(255, 255, 255, .1),
+        -1em .2em 1em -1em rgba(255, 255, 255, .1);
+
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &::after {
+        z-index: 20;
+        bottom: -45px;
+        left: 20px;
+        border-radius: 50%;
+        height: 72px;
+        width: 72px;
+        background: radial-gradient(circle at top right, #45FFCD 14%, #182E33 100%);
+
+    }
+
+    &::before {
+        z-index: -10;
+        top: -35px;
+        right: -40px;
+        border-radius: 50%;
+        height: 107px;
+        width: 107px;
+        background: radial-gradient(circle at top left, #BE9DEA 0%, #BE9DEA 46%, #BE9DEA60 75%, #BE9DEA00 100%);
+    }
+
+}
+
+.bubble {
+    position: relative;
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &::before {
+        z-index: -10;
+        top: 50%;
+        right: -50px;
+        border-radius: 50%;
+        height: 140px;
+        width: 140px;
+        background: radial-gradient(circle at center, #45FFCD 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%);
+        filter: blur(10px);
+    }
+    &::after {
+        z-index: -10;
+        top: 10%;
+        left: -55px;
+        border-radius: 50%;
+        height: 227px;
+        width: 227px;
+        background: radial-gradient(circle at center, #7B00FF 0%, #7B00FF64 22%, #7B00FF38 53%, #7B00FF00 100%);
+    }
 }
 
 .animatedContent {
