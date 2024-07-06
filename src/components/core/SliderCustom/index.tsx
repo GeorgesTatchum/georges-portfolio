@@ -1,46 +1,62 @@
 import { ProjectType } from '@/models/project_type';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 import styles from '@/components/Project/project.module.scss'
 import { useTheme } from 'next-themes';
 import ProjectCard from '@/components/Project/ProjectCard';
+import { ArrowLeftSquareFill, ArrowRightSquareFill } from 'react-bootstrap-icons';
 
 const SliderCustom = (props: { items: ProjectType[], autoSlide: boolean, }) => {
-    const { t } = useTranslation('common')
-    const { theme } = useTheme()
-    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? props.items.length - 1 : prevIndex - 1));
+    const wrapperRef = useRef(null);
+    const itemWidth = 200; // Adjust the size as needed
+    const [currentIndex, setCurrentIndex] = useState(2);
+
+    const scroll = (direction: string) => {
+        const wrapper = wrapperRef.current;
+        if (wrapper && wrapper instanceof HTMLElement){
+            const currentTranslateX = getTranslateX(wrapper);
+        const newTranslateX = direction === 'left' 
+        ? currentTranslateX + itemWidth 
+        : currentTranslateX - itemWidth;
+        wrapper.style.transform = `translateX(${newTranslateX}px)`;
+        if(direction === "left"){
+            setCurrentIndex((prevIndex) => (prevIndex === 0 ? props.items.length - 1 : prevIndex - 1));
+        } else {
+            setCurrentIndex((prevIndex) => (prevIndex === props.items.length - 1 ? 0 : prevIndex + 1));
+        }
+        
+        }
+        else {
+            console.error("Wrapper is null or not an instance of HTMLElement");
+        }
     };
 
-    const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === props.items.length - 1 ? 0 : prevIndex + 1));
+    const getTranslateX = (element: HTMLElement) => {
+        const style = window.getComputedStyle(element);
+        const matrix = new WebKitCSSMatrix(style.webkitTransform || style.transform);
+        return matrix.m41;
     };
-
-    // Utilisation de useEffect pour gérer le défilement infini
-    // useEffect(() => {
-    //     if (!props.autoSlide) return
-    //     const slideInterval = setInterval(handleNext, 3000)
-    //     return () => clearInterval(slideInterval)
-    // }, [props.items])
 
     return (
-        <section className="h-[calc(100vh_-_80px)] flex justify-center">
-            <div className="flex justify-center transition-transform duration-500 ease-in-out overflow-x-auto overflow-y-hidden gap-10 snap-mandatory h-[80%] mt-10"
-            // style={{ transform: `translateX(${currentIndex * (10 / props.items.length)}%)` }}
+        <section className="h-[calc(100vh_-_80px)] flex justify-center relative overflow-hidden w-full max-w-6xl mx-auto">
+            <div className="flex justify-center  overflow-hidden  snap-mandatory h-[70%] mt-10"
             >
+                <div ref={wrapperRef} id="wrapper" className='flex transition-transform duration-500 ease-in-out gap-10'>
                 {props.items.map((e, index) => (
-                    <ProjectCard e={e} key={index} className={`${currentIndex === index ? 'scale-y-[90%] scale-x-[90%] rounded-2xl' : 'scale-y-[70%] scale-x-[80%]'}`} />
+                    <ProjectCard e={e} key={index} className={`${currentIndex === index ? 'scale-y-[90%] scale-x-[110%]' : 'scale-y-[80%] rounded-2xl'}`} />
                 ))}
+                </div>
+                
             </div>
-            <button className="absolute top-1/2 left-0 transform  px-4 py-2 bg-gray-800  rounded-l-md" onClick={handlePrev}>
-                Précédent
+           
+            <button className="absolute top-1/3 left-0 transform  px-4 py-2 bg-gray-800  rounded-l-md" onClick={() => scroll('left')}>
+            <ArrowLeftSquareFill size={42} />
             </button>
-            <button className="absolute top-1/2 right-0 transform  px-4 py-2 bg-gray-800 rounded-r-md" onClick={handleNext}>
-                Suivant
+            <button className="absolute top-1/3 right-0 transform  px-4 py-2 bg-gray-800 rounded-r-md" onClick={() => scroll('right')}>
+            <ArrowRightSquareFill size={42} />
             </button>
         </section>
     );

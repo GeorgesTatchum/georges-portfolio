@@ -6,7 +6,7 @@ import SliderCustom from '@/components/core/SliderCustom'
 import { projects_data } from '@/models/data/projects'
 import { useEffect, useState } from 'react'
 
-export default function project() {
+export default function ProjectPage() {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     useEffect(() => {
         setTimeout(() => {
@@ -18,7 +18,7 @@ export default function project() {
             {
                 isLoading ? <LoadingPage /> : <>
                     <Navbar />
-                    <SliderCustom items={projects_data} autoSlide={true} />
+                    <SliderCustom items={projects_data.slice(2)} autoSlide={true} />
                     <Footer />
                 </>
             }

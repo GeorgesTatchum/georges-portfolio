@@ -35,7 +35,7 @@ const ProjectCard = (props: CardProps) => {
                     </div>
 
                     <div className='dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary dark:hover:!bg-primary/60 hover:!text-white rounded-md items-center flex justify-center p-3 cursor-pointer  w-4/5'>
-                        <Link href={props.e.url} className="flex items-center" target='_blank'>
+                        <Link href="/projects/1" className="flex items-center" target='_self'>
                             <span className='text-base Sfera uppercase'>
                                 {t('open_project')}
                             </span>

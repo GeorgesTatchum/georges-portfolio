@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
-import React from 'react'
+import React, {useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import { projects_data } from '@/models/data/projects';
@@ -10,7 +10,10 @@ import ProjectCard from './ProjectCard';
 
 const Project = () => {
     const { t } = useTranslation('common')
+    const [currentIndexProject, setCurrentIndexProject] = useState<number>(0)
     const { theme } = useTheme()
+    const handlePrev = () => setCurrentIndexProject((prev:number) => prev > 0 ? prev - 1 : 0)
+    const handleNext = () => setCurrentIndexProject((prev:number) => prev > 0 ? prev - 1 : 0)
 
     return (
         <section className='w-full py-4 dark:bg-gradient-to-b from-[#030110_0%] to-[#030110_100%] border-none' id='my_project'>
