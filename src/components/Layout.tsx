@@ -12,14 +12,15 @@ const roboto = Roboto(
 
 interface LayoutProps {
   title?: string,
+  className?: string,
   children: React.ReactNode;
 }
 
 const Layout = (props: LayoutProps) => {
-  const { title, children } = props
+  const { title, children, className } = props
 
   return (
-    <main className={roboto.className}>
+    <main className={roboto.className + ' ' + className}>
       <Head>
         <title>{title ? title : "Georges Tatchum"}</title>
         <meta charSet="utf-8" />

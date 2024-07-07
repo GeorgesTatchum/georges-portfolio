@@ -4,9 +4,12 @@ import { useEffect, useState } from "react";
 import SwitchTheme from "../core/SwitchTheme";
 import Link from "next/link";
 import { LightningChargeFill } from "react-bootstrap-icons";
+import CustomButton from "../core/CustomButton";
 
-
-export default function Navbar(props: any) {
+interface NavbarProps {
+    className?: string
+  }
+export default function Navbar(props: NavbarProps) {
     const { t } = useTranslation('common')
     const [scrolled, setScrolled] = useState(false);
     useEffect(() => {
@@ -43,9 +46,7 @@ export default function Navbar(props: any) {
                     </Link>
 
                     <div className="w-4" />
-                    <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary dark:hover:!bg-primary/60 hover:!text-white rounded-md items-center flex justify-center p-3 hover:cursor-pointer xs:hidden">
-                        <span className="uppercase text-center lg:text-sm md:text-xs Sfera hover:cursor-pointer">{t('send_msg')}</span>
-                    </div>
+                    <CustomButton title='send_msg' className="xs:hidden"/>
                     <div className="w-4" />
                     <SwitchLang />
                     <div className="w-4" />

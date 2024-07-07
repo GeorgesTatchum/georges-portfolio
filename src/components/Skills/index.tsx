@@ -2,6 +2,7 @@ import useTranslation from 'next-translate/useTranslation'
 import React, { CSSProperties } from 'react'
 import styles from './skills.module.scss'
 import Image from 'next/image';
+import Title from '../core/Title';
 
 export interface MyCustomCSS extends CSSProperties {
     '--count': number;
@@ -24,9 +25,7 @@ function Skills() {
                 className='flex flex-col items-start max-w-6xl mx-auto px-4 pb-14 xs:pb-0 pt-10'
             // style={{ background: `url(/universe_bubble_bg.svg)`, backgroundRepeat: 'no-repeat', backdropFilter: 'blur(10px)', backgroundSize: 'cover', backgroundPositionX: 'left' }}
             >
-                <span className='uppercase text-3xl Sfera text-white'>
-                    {t('my_hard_skill')}
-                </span>
+                <Title title={t('my_hard_skill')} className='text-white' />
                 <span className='mt-10 mb-10 text-md text-white'>
                     {t('favorite_tech')}
                 </span>

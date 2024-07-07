@@ -14,20 +14,19 @@ function    Contact() {
 
     }
     return (
-        <section className='w-full h-full dark:bg-gradient-to-t from-[#03011000_0%] to-[#030110_100%] py-8' id='contact_me'>
+        <section className='w-full h-full dark:bg-gradient-to-t from-[#03011000_0%] to-[#030110_100%] pt-10 pb-36' id='contact_me'>
 
             <div
                 className="relative flex flex-col items-center xs:mx-12"
-            // style={{ background: `url(/universe_bubble_bg.svg)`, backgroundRepeat: 'no-repeat', backgroundPositionX: 'center', backgroundPositionY: "center" }}
             >
-                <div className='Sfera contact-gradient dark:contact-gradient-dark text-7xl xs:text-5xl uppercase text-center flex flex-col justify-center z-10 translate-y-2 xs:translate-y-0'>
+                <div className='Sfera contact-gradient dark:contact-gradient-dark text-8xl sm:text-6xl xs:text-5xl uppercase text-center flex flex-col justify-center'>
                     <span>start this </span>
                     <span>connection </span>
                 </div>
-                <div className={`${styles.form} w-[320px] xs:mt-3 bg-white/10`}>
+                <div className={`${styles.form} w-[320px] -mt-4 z-10 xs:mt-3 bg-white/10`}>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
-                        className={`${styles.formContent}`} style={{ backdropFilter: 'blur(10px)', boxShadow: '0 25px 45px rgb(0, 0, 0, .35)' }}>
+                        className={`${styles.formContent}`} style={{ backdropFilter: 'blur(10px)'}}>
                         <InputTextField
                             placeholder={'your name'}
                             controller={register}

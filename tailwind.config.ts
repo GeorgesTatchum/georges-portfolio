@@ -24,9 +24,11 @@ const config: Config = {
 
       'sm': { 'min': '641px', 'max': '767px' },
       'smd': { 'max': '767px' },
+      'smdmin': { 'min': '768px' },
 
       'md': { 'min': '768px', 'max': '1023px' },
       'mdd': { 'max': '1023px' },
+      'mddmin': { 'min': '1024px' },
 
       'lg': { 'min': '1024px', 'max': '1279px' },
       'lgd': { 'max': '1279px' },
@@ -51,7 +53,8 @@ const config: Config = {
         "light-purple": "rgb(180, 111, 253)",
         'secondary': 'rgb(69, 255, 205)',
         "blood-red": 'rgb(255, 0, 0)',
-        "gray": 'rgb(16, 20, 29)'
+        "gray": 'rgb(16, 20, 29)',
+        "green": 'rgb(69, 255, 205)'
       },
       fontFamily: {
       }

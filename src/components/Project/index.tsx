@@ -7,6 +7,7 @@ import { useTheme } from 'next-themes';
 import styles from './project.module.scss'
 import { ArrowLeft, ArrowRight } from 'react-bootstrap-icons';
 import ProjectCard from './ProjectCard';
+import Title from '../core/Title';
 
 const Project = () => {
     const { t } = useTranslation('common')
@@ -18,9 +19,7 @@ const Project = () => {
     return (
         <section className='w-full py-4 dark:bg-gradient-to-b from-[#030110_0%] to-[#030110_100%] border-none' id='my_project'>
             <div className='max-w-6xl mx-auto px-4 m-4'>
-                <span className='uppercase text-3xl Sfera'>
-                    {t('my_project')}
-                </span>
+            <Title title={t('my_project')} />
             </div>
             <div className='flex items-center md:flex-col xs:flex-col-reverse w-full overflow-hidden 2xl:justify-center'>
                 <Image

@@ -6,6 +6,7 @@ import * as Icon from 'react-bootstrap-icons'
 import Link from 'next/link'
 import useMediaQueryHook from '@/hooks/useBreakpoints'
 import { useTheme } from 'next-themes'
+import Title from '../core/Title'
 
 export default function Resume() {
     const { t } = useTranslation('common')
@@ -36,9 +37,7 @@ export default function Resume() {
                 </div>
             </div><div className='px-4 max-w-6xl mx-auto translate-y-10'>
                 <div className='flex flex-col items-start'>
-                    <span className='uppercase text-3xl Sfera'>
-                        {t('my_soft_skill')}
-                    </span>
+                    <Title title={t('my_soft_skill')} />
                     <div className='flex flex-wrap items-start mt-10 gap-4'>
                         {
                             skills.map((e, index) => (
