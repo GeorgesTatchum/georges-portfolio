@@ -30,7 +30,7 @@ function Skills() {
                     {t('favorite_tech')}
                 </span>
                 <div className='flex justify-around w-full items-center mdd:flex-col md:gap-16 mb-6'>
-                    <div className={`${styles.bubble}`}>
+                    <div className={`${styles.bubble}`}> 
                         <div className={`${styles.cardProject}`}>
                             {
                                 skills.map((e, index) => (

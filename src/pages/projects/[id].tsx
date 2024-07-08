@@ -46,7 +46,7 @@ export default function ProjectDetails () {
                 isLoading ? <LoadingPage /> : <>
                     <Navbar />
                     <section className={`h-full w-full relative`}>
-                        <div className="bg-[url('/noise.svg')] inset-0 absolute -z-10 mix-blend-difference">&nbsp;</div>
+                        <div className="-mt-10 bg-[url('/noise.svg')] inset-0 absolute -z-10 mix-blend-difference">&nbsp;</div>
                         <div className={`max-w-6xl mx-auto h-full flex flex-col py-6 gap-10 px-6`}>
                             <div className='w-64'>
                                 <CustomButton title='view_all_projects' onClick={()=> {router.back()}}/>

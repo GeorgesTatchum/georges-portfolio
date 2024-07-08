@@ -139,12 +139,10 @@ input::-webkit-inner-spin-button {
 
 .cardProject {
   background-image: linear-gradient(to top, #7B00FF10, #7B00FF00, #7B00FF00, #7B00FF10);
-  @apply dark:bg-dark-purple;
 }
 
 .cardProjectLight {
   background-image: linear-gradient(to top, #EEEEEE30, #EEEEEE00, #EEEEEE00, #EEEEEE30);
-  @apply bg-white;
 }
 
 .cardProjectBg {
@@ -170,13 +168,13 @@ input::-webkit-inner-spin-button {
 }
 
 .contact-gradient-dark {
-  background-image: linear-gradient(45deg, #45FFCD 0%, #45FFCD09 100%);
+  background-image: linear-gradient(95deg, #45FFCD 13.23%, rgba(69, 255, 205, 0.00) 95.21%);
   background-clip: text;
   color: transparent;
 }
 
 .contact-gradient {
-  background-image: linear-gradient(45deg, #45FFCD 0%, #10141D 100%);
+  background-image: linear-gradient(95deg, #45FFCD 13.23%, #10141D 95.21%);
   background-clip: text;
   color: transparent;
 }

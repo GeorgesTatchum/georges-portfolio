@@ -1,0 +1,11 @@
+.fake_logo {
+    color: #10141D
+}
+
+:global(.dark) {
+    .fake_logo {
+        background-image: linear-gradient(183deg, rgba(204, 204, 204, 0.40) 6.15%, #CCC 46.93%, #CCC 57.71%, rgba(204, 204, 204, 0.40) 96.14%);
+        background-clip: text;
+        color: transparent
+    }
+}

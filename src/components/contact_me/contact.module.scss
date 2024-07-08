@@ -37,7 +37,7 @@
 }
 
 .formContent {
-    @apply bg-white/10 border-[#10141D]/20 dark:border-white/20 border-2 rounded-md p-5 flex flex-col items-center gap-4 z-10;
+    @apply bg-white/10 border-[#383838]/20 dark:border-white/20 border-2 rounded-lg p-5 flex flex-col items-center gap-4 z-10;
 
     &::after,
     &::before {
