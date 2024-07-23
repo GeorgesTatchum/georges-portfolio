@@ -46,10 +46,10 @@ export default function ProjectDetails () {
                 isLoading ? <LoadingPage /> : <>
                     <Navbar />
                     <section className={`h-full w-full relative`}>
-                        <div className="-mt-10 bg-[url('/noise.svg')] inset-0 absolute -z-10 mix-blend-difference">&nbsp;</div>
+                        <div className="bg-[url('/noise.svg')] inset-0 absolute -z-10 mix-blend-difference">&nbsp;</div>
                         <div className={`max-w-6xl mx-auto h-full flex flex-col py-6 gap-10 px-6`}>
                             <div className='w-64'>
-                                <CustomButton title='view_all_projects' onClick={()=> {router.back()}}/>
+                                <CustomButton title='view_all_projects' onClick={()=> {router.replace('/projects')}}/>
                             </div>
                             <div className='flex gap-x-9 w-1/2 smd:w-full'>
                                 <div className={`flex flex-col relative h-24 flex-1 ${styles.border_gradient} justify-center items-center`} >

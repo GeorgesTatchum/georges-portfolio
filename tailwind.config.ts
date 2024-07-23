@@ -10,18 +10,8 @@ const config: Config = {
   theme: {
 
     screens: {
-      /* '2xl': { 'min': '1535px' },
-
-      'xl': { 'min': '1280px' },
-
-      'lg': { 'min': '1023px' },
-
-      'md': { 'min': '767px' },
-
-      'sm': { 'max': '639px' }, */
-
       'xs': { 'max': '640px' },
-
+      'smin': { 'min': '641px' },
       'sm': { 'min': '641px', 'max': '767px' },
       'smd': { 'max': '767px' },
       'smdmin': { 'min': '768px' },

@@ -21,12 +21,11 @@ export const AboutUs = () => {
           <div className='max-w-6xl mx-auto flex flex-col smd:items-start items-end'>
             <div className='flex flex-row justify-end items-center mb-5'>
               <span className='uppercase text-base Sfera mr-2'>{t('my_name_is')}</span>
-              <div className="bg-primary rounded-md items-center flex justify-center p-3">
+              <div className="bg-primary rounded-md items-center flex justify-center p-2">
                 <span className="uppercase lg:text-sm md:text-xs Sfera hover:cursor-pointer text-white"> Georges.T</span>
               </div>
             </div>
-            <span className="uppercase xs:text-5xl text-8xl text-right Sfera dark:cardOutline">web &</span>
-            <span className="uppercase xs:text-5xl text-8xl text-right Sfera dark:cardOutline">mobile</span>
+            <span className="uppercase xs:text-5xl text-8xl text-right Sfera whitespace-pre-line">{"web &\nmobile"}</span>
             <span className="uppercase xs:text-md text-lg pl-2 xs:text-left md:text-center Sfera text-primary">developer</span>
             {
               (sm || md) && <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary rounded-md items-center flex justify-center p-3 hover:cursor-pointer mt-10 text-primary hover:text-white w-3/5">

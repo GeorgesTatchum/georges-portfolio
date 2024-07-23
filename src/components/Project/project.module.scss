@@ -19,7 +19,8 @@ div:has(>.image) {
 .list {
     @apply flex;
     height: auto;
-    width: calc(100% + 2.5rem);
+    width: 100%;
+    // width: calc(100% + 2.5rem);
     mask-image: linear-gradient(to left, #ffffff 95%, rgba(255, 255, 255, 0));
 }
 
@@ -35,7 +36,7 @@ div:has(>.image) {
 .card {
     @apply flex-none w-80 aspect-[0.805] relative border-solid border-2 p-8 gap-6 flex flex-col rounded-lg justify-between z-10;
     &.active {
-        @apply w-[480px] p-14
+        @apply w-[460px] p-14
     }
     transition: all .3s;
 

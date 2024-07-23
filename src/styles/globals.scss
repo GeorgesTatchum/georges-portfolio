@@ -47,6 +47,10 @@ body {
   transition: background 0.3s;
 }
 
+span{
+  user-select: none;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   appearance: none;
@@ -106,7 +110,7 @@ input::-webkit-inner-spin-button {
 }
 
 .cardOutline {
-  background-image: linear-gradient(45deg, #CCCCCC40, #ccc, #CCCCCC40);
+  background-image: linear-gradient(183deg, rgba(204, 204, 204, 0.40) 6.15%, #CCC 46.93%, #CCC 57.71%, rgba(204, 204, 204, 0.40) 96.14%);
   background-clip: text;
   color: transparent;
 }

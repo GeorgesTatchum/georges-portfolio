@@ -18,7 +18,7 @@ export default function ProjectPage() {
             {
                 isLoading ? <LoadingPage /> : <>
                     <Navbar />
-                    <SliderCustom items={projects_data.slice(2)} autoSlide={true} />
+                    <SliderCustom items={projects_data} autoSlide={true} />
                     <Footer />
                 </>
             }

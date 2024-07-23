@@ -1,5 +1,4 @@
 import { ProjectType } from '@/models/project_type'
-import Link from 'next/link'
 import React from 'react'
 import styles from '../project.module.scss'
 import { useTheme } from 'next-themes'
@@ -35,7 +34,9 @@ const ProjectCard = (props: CardProps) => {
                     </span>
                 </div>
             </div>
-            <CustomButton title={t('open_project')} className='mt-[6px] w-fit' onClick={()=> {router.push('/projects/1')}}/>
+            <CustomButton title={t('open_project')} className='mt-[6px] w-fit' onClick={()=> {if (props.active === true) {
+                router.push('/projects/1')
+            }}}/>
         </div >
     )
 }

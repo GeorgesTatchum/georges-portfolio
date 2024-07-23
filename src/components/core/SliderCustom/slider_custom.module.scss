@@ -1,9 +1,9 @@
 .cardList{
-    max-width: 100vw;
+    max-width: 100%;
     mask-image: linear-gradient(to right, rgba(255, 255, 255, 0) 6%, #ffffff 20%, #ffffff 80%, rgba(255, 255, 255, 0) 94%);
     position: relative;
 }
 
-.active {
-    width: 480px;
+.cardListWrapper {
+    
 }
