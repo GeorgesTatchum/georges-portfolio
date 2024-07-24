@@ -17,8 +17,18 @@
     "send_msg": "send a message",
     "my_name_is": "my name is",
     "my_soft_skill": "my soft-skills",
-    "my_hard_skill": "mys soft-skills",
+    "my_hard_skill": "my hard-skills",
     "favorite_tech": "Some of my favorites technologies",
     "call_me": "tex/ call me",
-    "my_project": "What i do"
+    "my_project": "What i do",
+    "view_all_projects": "view all projects",
+    "open_project": "Open",
+    "see_more": "See more",
+    "presentation": "I combine technical expertise and innovation to design high-performance, intuitive applications. My mastery of modern technologies enables me to create tailor-made solutions, adapted to the specific needs of each project.",
+    "developer": "developer",
+    "meet_me_on": "MeeT Me On Social",
+    "teams_or_single": "Experience, working with teams or alone",
+    "project_part": "Projects participation's",
+    "footer_desc": "You've seen a selection of my work, but each project is just a taste of what I can bring to the table. My aim is to continue to evolve and push the boundaries of software engineering. I'm open to discussions, collaborations, and innovative ideas. Please contact me to explore how we can work together to create something exceptional.🫡",
+    "all_r_reserv": "all right reserved"
 }

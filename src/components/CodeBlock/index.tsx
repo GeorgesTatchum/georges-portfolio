@@ -1,34 +1,14 @@
 import '@/components/CodeBlock/'
-import { useTheme } from 'next-themes'
 import React, { useEffect, useState } from 'react'
 import parse from 'html-react-parser'
 
 export const CodeBlock = (props: { description: string, className?: string }) => {
     const { description, className } = props
-    const { theme } = useTheme()
     let colors: string[] = ['bg-[#FF5F56]', 'bg-[#FFBD2E]', "bg-[#27C93F]"]
-
-    // const [typedContent, setTypedContent] = useState('');
-
-    // useEffect(() => {
-    //     let currentIndex = 0;
-    //     const intervalId = setInterval(() => {
-    //         if (currentIndex <= description.length) {
-    //             setTypedContent(description.slice(0, currentIndex));
-    //             currentIndex++;
-    //         } else {
-    //             clearInterval(intervalId); // Arrête l'effet de frappe lorsque tout le texte est affiché
-    //         }
-    //     }, 5);
-
-    //     return () => {
-    //         clearInterval(intervalId); // Nettoie l'intervalle lors du démontage du composant
-    //     };
-    // }, [description]);
 
     return (
         <div className={`flex flex-col gap-3 p-3 dark:bg-[#0A1A22] w-full text-sm ${className} relative bg-white`}>
-            <div className='flex gap-1'>
+            <div className='flex gap-2'>
                 {
                     colors.map((e, index) => (
                         <>
@@ -45,7 +25,7 @@ export const CodeBlock = (props: { description: string, className?: string }) =>
                 </div>
                 <div className="flex-grow pl-3 text-xs">
                     {description.split("\n").map((line, index) => (
-                        <div key={index + line[12]} className={`whitespace-pre-wrap ${description.split("\n").length <= 12 ? 'mt-0.5' : ''}`}>{parse(line)} </div>
+                        <div key={index + line[12]} className={`whitespace-pre-wrap ${description.split("\n").length <= 12 ? 'mt-1' : ''}`}>{parse(line)} </div>
                     ))}
                 </div>
             </div>

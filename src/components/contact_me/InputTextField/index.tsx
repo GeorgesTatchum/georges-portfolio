@@ -51,7 +51,7 @@ export default function InputTextField(props: formInput) {
                 }
                 )}
                 type={type ? type : 'text'}
-                className={`${type == "file" ? fileInputClass : 'rounded-md py-3 px-4 focus:border-primary'} w-full Sfera text-xs placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10`}
+                className={`${type == "file" ? fileInputClass : 'rounded-[4px] py-3 px-4'} w-full Sfera text-xs placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10 border-none outline-none resize-none focus:outline-primary focus:outline focus:outline-2 transition-all duration-300`}
                 min={min ? min : 0}
                 max={max}
                 accept='.pdf, image/*, .docx'

@@ -7,16 +7,31 @@ import Project from '@/components/Project'
 import Resume from '@/components/Resume'
 import Skills from '@/components/Skills'
 import Contact from '@/components/contact_me'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { asPath } = useRouter();
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 4500);
   }, [])
+
+  useEffect(() => {
+    const anchor = asPath.split("#")[1];
+    if (anchor) {
+        const element = document.getElementById(anchor);
+        if (element) {
+            window.scrollTo({
+                top: element.offsetTop,
+                behavior: 'smooth',
+            });
+        }
+    }
+}, [asPath]);
   return (
     <Layout>
       {

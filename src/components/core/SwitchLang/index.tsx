@@ -26,15 +26,14 @@ export default function SwitchLang() {
 
   return (
     <div
-      className="p-2 flex justify-stretch hover:cursor-pointer"
+      className="p-2 flex items-center justify-stretch hover:cursor-pointer"
       onClick={(e) => {
         e.preventDefault();
         handleLanguageChange();
       }}
     >
-      <Icon.Translate size={24} />
-      {/* <img src="/translate_ic.svg" alt="translate_icon" /> */}
-      <span className="ml-2 text-left uppercase hover:underline Sfera underline-animation inset-x-0">{lang}</span>
+      <Icon.Translate size={20}/>
+      <span className="ml-2 text-left text-[10px] uppercase hover:underline Sfera underline-animation inset-x-0">{lang}</span>
     </div>
   );
 }

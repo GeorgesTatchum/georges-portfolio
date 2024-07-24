@@ -49,11 +49,4 @@ export const projects_data: ProjectType[] = [
         'descript': 'lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, et quae! Aperiam hic ut placeat, inventore expedita aut perferendis necessitatibus sit facere eum vel animi similique accusamus, maiores eius labore! ',
         'url': 'factauto.com'
     },
-    {
-        'title': 'sayit',
-        'type': 'web app',
-        'logo': '',
-        'descript': 'lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, et quae! Aperiam hic ut placeat, inventore expedita aut perferendis necessitatibus sit facere eum vel animi similique accusamus, maiores eius labore! ',
-        'url': 'factauto.com'
-    }
 ]

@@ -1,0 +1,35 @@
+
+.border_gradient::before,
+.border_gradient::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      border-style: solid;
+      border-width: 2px;
+    }
+
+.border_gradient::before {
+    top: 0;
+    border-image: linear-gradient(to right, #7B00FF 0%, #7B00FF00 100%); /* Gradient for the top border */
+    border-image-slice: 1;
+}
+
+.border_gradient::after {
+    bottom: 0;
+    border-image: linear-gradient(to left, #7B00FF 0%, #7B00FF00 100%); /* Gradient for the bottom border */
+    border-image-slice: 1;
+}
+
+.border_gradiant_stack{
+    content: '';
+    background: linear-gradient(to bottom, #383838 0%, #7B7B7B 34%, #FFFFFF 100%);
+}
+
+.flex_shrink {
+    flex-shrink: 2;
+}
+
+.noise {
+    filter: contrast(0%) brightness(100%)
+}
