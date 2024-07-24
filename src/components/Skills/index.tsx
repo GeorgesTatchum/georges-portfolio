@@ -15,7 +15,7 @@ export interface MyCustomCSS extends CSSProperties {
 
 function Skills() {
     const { t } = useTranslation('common')
-    const skills = ['pROFESSIONNAL', 'Regarding', 'RIGOUSOUS', 'ATTENTIVE', 'ATTENTIVE', 'logic', 'Dynamic', 'Proactif', 'Diplomate', 'Enthousiaste']
+    const skills = ["Fastapi", "Django", "flask", "redis", "celery", "rabbitmq", "kubernetes", "elk", "Github/gitlab", "Gitlab-CI/CD", "Jenkins", "caddy",  "mongodb", "postgressql", "dbeaver", "tailwind", "react-query", "redux", "swift"]
     return (
         <section
             className="w-full bg-darkest dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%] border-none mt-20"
@@ -23,7 +23,6 @@ function Skills() {
         >
             <div
                 className='flex flex-col items-start max-w-6xl mx-auto px-4 pb-14 xs:pb-0 pt-10'
-            // style={{ background: `url(/universe_bubble_bg.svg)`, backgroundRepeat: 'no-repeat', backdropFilter: 'blur(10px)', backgroundSize: 'cover', backgroundPositionX: 'left' }}
             >
                 <Title title={t('my_hard_skill')} className='text-white' />
                 <span className='mt-10 mb-10 text-md text-white'>
@@ -32,8 +31,9 @@ function Skills() {
                 <div className='flex justify-around w-full items-center mdd:flex-col md:gap-16 mb-6'>
                     <div className={`${styles.bubble}`}> 
                         <div className={`${styles.cardProject}`}>
+                            <div className='flex flex-col justify-start gap-5 '>
                             {
-                                skills.map((e, index) => (
+                                skills.slice(0, 9).map((e, index) => (
                                     <>
                                         <div className='self-start'>
                                             <span key={index} className="uppercase text-center text-sm Sfera text-white">{t(e)}</span>
@@ -42,6 +42,20 @@ function Skills() {
 
                                 ))
                             }
+                            </div>
+                            <div className='flex flex-col justify-start gap-5 '>
+                            {
+                                skills.slice(10, skills.length).map((e, index) => (
+                                    <>
+                                        <div className='self-end'>
+                                            <span key={index} className="uppercase text-center text-sm Sfera text-white">{t(e)}</span>
+                                        </div>
+                                    </>
+
+                                ))
+                            }
+                            </div>
+                            
                         </div>
                     </div>
 

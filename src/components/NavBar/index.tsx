@@ -6,27 +6,44 @@ import Link from "next/link";
 import { LightningChargeFill } from "react-bootstrap-icons";
 import CustomButton from "../core/CustomButton";
 import styles from "./navbar.module.scss"
+import { useRouter } from "next/router";
 
 interface NavbarProps {
     className?: string
   }
 export default function Navbar(props: NavbarProps) {
     const [scrolled, setScrolled] = useState(false);
+    const router = useRouter()
     useEffect(() => {
-        console.log(localStorage.getItem('color-theme'));
         const handleScroll = () => {
             const isScrolled = window.scrollY > 0;
             setScrolled(isScrolled);
         };
 
         window.addEventListener('scroll', handleScroll);
-        console.log("on scroll : ", scrolled);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+    }, []);
 
-    }, [scrolled])
+    const scrollToAnchor = (anchor: string) => {
+        router.push('/'); 
+        setTimeout(() => {
+            const element = document.getElementById(anchor);
+            if (element) {
+                window.scrollTo({
+                    top: element.offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+        }, 100);
+    };
+
+    const handleButtonClick = () => {
+        scrollToAnchor('contact_me'); 
+    };
+
 
     return (
         <header className={`w-full py-4 sticky top-0 flex bg-transparent z-50 backdrop-blur-xl ${scrolled ?? 'text-white'}`}>
@@ -40,8 +57,8 @@ export default function Navbar(props: NavbarProps) {
                 
                 <nav id='navbar' className="flex justify-between items-center xs:w-3/4">
                     <LinkItem path={"/projects"} label={"t_projet"}/>
-                    <LinkItem path={"#my_resume"} label={"get_resume"}/>
-                    <CustomButton title='send_msg' className="xs:hidden" size="small"/>
+                    <LinkItem path={"/#my_resume"} label={"get_resume"}/>
+                    <CustomButton title='send_msg' className="xs:hidden" size="small" onClick={handleButtonClick}/>
                 </nav>
 
                 <div className="flex justify-between items-center gap-4">
@@ -58,7 +75,7 @@ const LinkItem = ({path, label}: {path: string, label: string}) => {
 
     return (
         <Link href={path}>
-            <span className="uppercase text-xs leading-3 py-3 px-4 Sfera rounded-[4px] hover:outline hover:outline-2 dark:hover:outline-primary hover:outline-primary/60 cursor-pointer">{t(label)}</span>
+            <span className="uppercase text-xs leading-3 py-3 px-4 Sfera rounded-[4px] dark:hover:outline-primary cursor-pointer hover:scale-[1.02] transform duration-200 transform-origin-center">{t(label)}</span>
         </Link>
     )
 }

@@ -100,10 +100,8 @@
     z-index: 10;
     @apply 
         rounded-lg 
-        flex 
-        flex-col 
-        justify-start 
-        gap-5 
+        flex
+        justify-between 
         border-white/20 
         border-2 w-80;
     backdrop-filter: blur(45px);

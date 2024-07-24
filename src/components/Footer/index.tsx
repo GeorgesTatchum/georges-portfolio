@@ -15,13 +15,12 @@ export default function Footer(props: any) {
                 <div className="h-10" />
                 <div className="w-3/5 xs:w-full text-start">
                     <span className="font-normal">
-                        End Text if you have anything to put as conclusion so put a
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, et quae! Aperiam hic ut placeat, inventore expedita aut perferendis necessitatibus sit facere eum vel animi similique accusamus, maiores eius labore!
+                        {t("footer_desc")}
                     </span>
                 </div>
                 <div className="flex justify-between items-center mt-[8%] mdd:flex-col-reverse mdd:items-start">
                     <span className="font-normal">
-                        © {new Date().getFullYear()} Georges Tatchum  all right reserved
+                        © {new Date().getFullYear()} Georges Tatchum {t("all_r_reserv")}
                     </span>
                     <div className="flex justify-between mdd:mb-4 xs:flex-col">
                         {
