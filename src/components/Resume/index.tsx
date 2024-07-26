@@ -121,7 +121,7 @@ function ResumeContent(props: { className: string }) {
                     <Link href='https://www.linkedin.com/in/georges-tatchum-b21158265' className="cursor-pointer" target='_blank'>
                         <Icon.Linkedin size={18} />
                     </Link>
-                    <Link href='#' className="cursor-pointer" target='_blank'><Icon.Gitlab size={18} /></Link>
+                    <Link href='https://gitlab.com/midoryaga13' className="cursor-pointer" target='_blank'><Icon.Gitlab size={18} /></Link>
                     <Link href='https://github.com/GeorgesTatchum' className="cursor-pointer" target='_blank'><Icon.Github size={18} /></Link>
 
                 </div>
