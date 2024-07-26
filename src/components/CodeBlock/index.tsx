@@ -18,7 +18,7 @@ export const CodeBlock = (props: { description: string, className?: string, seco
             </div>
             <div className='flex'>
                 <div className={`flex-shrink-0 text-right pr-3`}>
-                    {(second === true ? (description.split("\n")).concat([1, 2, 3, 4,5,6,7,8]) : description.split("\n")).map((_, index) => (
+                    {(second === true ? (description.split("\n")).concat(["1", "2", "3", "4","5","6","7","8"]) : description.split("\n")).map((_, index) => (
                         <span key={index} className={`block text-[#666666] `}>{index + 1}</span>
                     ))}
                 </div>
