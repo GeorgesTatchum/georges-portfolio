@@ -4,7 +4,6 @@ import Layout from '@/components/Layout';
 import Navbar from '@/components/NavBar';
 import { useRouter } from 'next/router';
 import styles from './projects.module.scss'
-import { contacts } from '@/models/data/contacts';
 import useTranslation from 'next-translate/useTranslation'
 import Title from '@/components/core/Title';
 import { projects_data } from '@/models/data/projects';
@@ -15,18 +14,6 @@ type TechStack = {
     mobile?: string[];
   };
 
-const data = [
-    [
-            "python", "fastapi", "gitlab", "docker"
-    ],
-   [
-            "react", "scss/sass", "javascript", "typecript", "html5", "nextjs",
-    ],
-    [
-            "flutter",
-    ],
-    
-]
 
 export default function ProjectDetails () {
     const {t, lang} = useTranslation('common')
@@ -132,7 +119,7 @@ export default function ProjectDetails () {
 
                             </div>
                             <div className='mt-10 w-64 self-center mb-[52px] sm:mb-[73px] md:mb-[73px] xs:mb-[52px]'>
-                                <CustomButton title='view_all_projects' onClick={()=> {router.back()}}/>
+                                <CustomButton title='view_all_projects' onClick={()=> {router.replace('/projects')}}/>
                             </div>
                         </div>
                     </section>
