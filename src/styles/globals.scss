@@ -194,11 +194,15 @@ input::-webkit-inner-spin-button {
     bottom: 0;
     left: 0;
     margin: -3px;
-    border-radius: 6px;
+    border-radius: 10px;
     background: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
   }
 
   &.borderGradientDark:before {
     background: linear-gradient(to top, #383838, #7B7B7B, #FFFFFF);
   }
+}
+
+.hideToTop {
+  @apply cursor-none pointer-events-none hidden
 }

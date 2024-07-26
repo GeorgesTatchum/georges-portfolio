@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import useTranslation from "next-translate/useTranslation";
 import { BrightnessHighFill, Laptop, MoonFill } from "react-bootstrap-icons";
-
+import styles from './index.module.scss'
 
 export default function SwitchTheme() {
 
@@ -39,14 +39,12 @@ export default function SwitchTheme() {
 
   useEffect(() => {
     setActiveTheme(theme)
-    console.log('active theme : ', theme);
-
   }, [theme])
 
 
   return (
     <div className="relative text-left inline-block">
-      <div className="cursor-pointer" onClick={(e) => setIsOpen(!isOpen)} id="theme-menu">
+      <div className={`cursor-pointer hover:-rotate-[360deg] duration-500 ease-in`} onClick={(e) => setIsOpen(!isOpen)} id="theme-menu">
         {activeTheme === 'dark' ? <BrightnessHighFill size={20} color="#7B00FF" /> : activeTheme === 'system' ? <Laptop size={20} color="#7B00FF" /> : <MoonFill size={20} color="#7B00FF" />}
       </div>
       {

@@ -1,3 +1,27 @@
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
 .form {
     border: 2px solid transparent;
     flex: none;
@@ -33,7 +57,10 @@
         height: 227px;
         width: 227px;
         background: radial-gradient(95.42% 95.42% at 95.83% 16.38%, #7B00FF 0%, rgba(123, 0, 255, 0.64) 22.3%, rgba(123, 0, 255, 0.38) 53.46%, rgba(123, 0, 255, 0.00) 100%);
+        transform-origin: center center;
+        animation: moveInCircle 25s ease infinite;
     }
+
 }
 
 .formContent {
@@ -53,7 +80,7 @@
         height: 140px;
         width: 140px;
         background: radial-gradient(circle at center, #45FFCD 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%);
-        filter: blur(10px);
+        filter: blur(35px);
     }
     
     &::after {

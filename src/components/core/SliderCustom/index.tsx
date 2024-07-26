@@ -28,15 +28,15 @@ const SliderCustom = (props: { items: ProjectType[], autoSlide: boolean, }) => {
             setActivePosition(newPosition);
         }
     }, [currentIndexProject]);
-    console.log("the active position : ", activePosition);
+    
 
     return (
         <section className="min-h-[calc(100vh-80px)] flex flex-col items-center justify-center relative overflow-hidden w-full ">
             <div className="absolute top-1/2 flex justify-between w-full z-10 px-4 xs:hidden">
-                <button onClick={handlePrev} className="bg-gray-800 rounded-l-md">
+                <button onClick={handleNext} className="bg-gray-800 rounded-l-md">
                     <ArrowLeftSquareFill size={42} />
                 </button>
-                <button onClick={handleNext} className="bg-gray-800 rounded-r-md">
+                <button onClick={handlePrev} className="bg-gray-800 rounded-r-md">
                     <ArrowRightSquareFill size={42} />
                 </button>
             </div>
@@ -51,19 +51,22 @@ const SliderCustom = (props: { items: ProjectType[], autoSlide: boolean, }) => {
                     {props.items.map((e, index) => (
                         <ProjectCard
                             e={e}
+                            id={index}
                             key={index}
-                            active={index == currentIndexProject}
+                            active={index === currentIndexProject}
                         />
                     ))}
                 </div>
             </div>
             <div
-                    className={`flex flex-col items-center transition-transform duration-500 ease-in-out gap-16 smin:hidden`}
+                    className={`flex flex-col items-center transition-transform duration-500 ease-in-out gap-16 py-16 smin:hidden`}
                 >
                     {props.items.map((e, index) => (
                         <ProjectCard
                             e={e}
+                            id={index}
                             key={index}
+                            transition={true}
                         />
                     ))}
                 </div>

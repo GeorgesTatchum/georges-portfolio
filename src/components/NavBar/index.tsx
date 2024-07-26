@@ -28,7 +28,7 @@ export default function Navbar(props: NavbarProps) {
     }, []);
 
     const scrollToAnchor = (anchor: string) => {
-        router.push('/'); 
+        router.push('/#contact_me'); 
         setTimeout(() => {
             const element = document.getElementById(anchor);
             if (element) {
@@ -55,7 +55,7 @@ export default function Navbar(props: NavbarProps) {
                     </span>
                 </Link>
                 
-                <nav id='navbar' className="flex justify-between items-center xs:w-3/4">
+                <nav id='navbar' className="flex justify-between items-center xs:w-3/4 gap-x-4 xs:justify-center">
                     <LinkItem path={"/projects"} label={"t_projet"}/>
                     <LinkItem path={"/#my_resume"} label={"get_resume"}/>
                     <CustomButton title='send_msg' className="xs:hidden" size="small" onClick={handleButtonClick}/>
@@ -74,8 +74,8 @@ const LinkItem = ({path, label}: {path: string, label: string}) => {
     const { t } = useTranslation('common')
 
     return (
-        <Link href={path}>
-            <span className="uppercase text-xs leading-3 py-3 px-4 Sfera rounded-[4px] dark:hover:outline-primary cursor-pointer hover:scale-[1.02] transform duration-200 transform-origin-center">{t(label)}</span>
+        <Link href={path} className="hover:scale-[1.1] transform duration-200 transform-origin-center">
+            <span className={`uppercase text-xs leading-3 py-3 px-4 Sfera rounded-[4px] dark:hover:outline-primary cursor-pointer transform duration-200 transform-origin-center hover:text-primary ${styles.linkItem}`}>{t(label)}</span>
         </Link>
     )
 }

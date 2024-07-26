@@ -20,7 +20,6 @@ div:has(>.image) {
     @apply flex;
     height: auto;
     width: 100%;
-    // width: calc(100% + 2.5rem);
     mask-image: linear-gradient(to left, #ffffff 95%, rgba(255, 255, 255, 0));
 }
 
@@ -29,7 +28,7 @@ div:has(>.image) {
     height: auto;
     width: 100%;
     transition: all .3s;
-    transform: translateX(var(--translate-x))
+    transform: translateX(var(--translate-x));
 }
 
 

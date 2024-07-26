@@ -66,21 +66,23 @@ export default function Resume() {
         <section
             className='w-full flex flex-col bg-contain bg-no-repeat'
             id="my_resume"
-            style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: '40% 20%', backgroundSize: '500px' }}>
-            <div className='w-full -top-5 mdd:top-1/4 flex max-w-6xl mx-auto px-4'>
+            style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: '40% 20%', backgroundSize: '600px' }}>
+            <div className='w-full -top-5 mdd:top-1/4 flex max-w-6xl mx-auto px-4 md:justify-around xs:justify-center'>
                 <div className='flex justify-between gap-7'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5'>
-                        <div className='w-full z-0'> <div className={`borderGradient dark:borderGradientDark flex-none relative`}>
-                            <CodeBlock description={lang === "fr" ?aboutMeData : aboutMeData_en} /> </div> </div>
-
+                        <div className='z-0 sm:w-1/2 w-full'> 
+                            <div className={`borderGradient dark:borderGradientDark flex-none relative hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer`}>
+                                <CodeBlock description={lang === "fr" ?aboutMeData : aboutMeData_en} /> 
+                            </div> 
+                        </div>
                         <div
-                            className='w-full md:h-full self-end md:self-start mdd:flex mdd:flex-col md:justify-between z-10 translate-y-4 mdd:translate-y-0 mdd:gap-2'
+                            className='w-full md:h-full self-end md:self-start mdd:flex mdd:flex-col md:justify-between z-10 translate-y-4 mdd:translate-y-0 mdd:gap-2 sm:w-1/2'
                         >
-                            <div className={`borderGradient dark:borderGradientDark flex-none relative`}>
-                                <CodeBlock description={lang === "fr" ?aboutMeData2 : aboutMeData2_en} />
+                            <div className={`borderGradient dark:borderGradientDark relative hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer`}>
+                                <CodeBlock description={lang === "fr" ?aboutMeData2 : aboutMeData2_en} second={true} />
                             </div>
 
-                            {lgd && <ResumeContent className='flex flex-col justify-between lg:hidden gap-4' />}
+                            {lgd && <ResumeContent className='flex flex-col xs:mt-16 justify-between lg:hidden gap-16 w-full' />}
                         </div>
                     </div>
                     <ResumeContent className='flex flex-col justify-between mdd:hidden' />
@@ -126,7 +128,7 @@ function ResumeContent(props: { className: string }) {
             </div>
             <div className='flex justify-between'>
                 <div className='flex flex-col'>
-                    <span className='uppercase text-3xl Sfera text-primary text-start'>{new Date().getFullYear() - 2020} years</span>
+                    <span className='uppercase text-3xl Sfera text-primary text-start'>{new Date().getFullYear() - 2020} {t("years")}</span>
                     <div className='self-end xs:w-4/5 xs:self-auto'>
                         <span className='text-base text-end'>{t("teams_or_single")}</span>
                     </div>
