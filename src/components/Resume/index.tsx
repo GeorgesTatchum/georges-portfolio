@@ -117,7 +117,7 @@ function ResumeContent(props: { className: string }) {
         <div className={props.className}>
             <div className="dark:bg-white/10 bg-gray bg-opacity-10 rounded-md items-center flex p-4 justify-between">
                 <span className="uppercase text-sm Sfera">{t("meet_me_on")}</span>
-                <div className='flex gap-3'>
+                <div className='flex gap-3 xs:gap-6'>
                     <Link href='https://www.linkedin.com/in/georges-tatchum-b21158265' className="cursor-pointer" target='_blank'>
                         <Icon.Linkedin size={18} />
                     </Link>

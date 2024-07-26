@@ -20,4 +20,8 @@ export const contacts: Contact[] = [
         'title': 'github',
         'link': 'https://github.com/GeorgesTatchum'
     },
+    {
+        'title': 'gitlab',
+        'link': 'https://gitlab.com/midoryaga13'
+    },
 ]

@@ -3,10 +3,12 @@ import useTranslation from 'next-translate/useTranslation'
 import React from 'react'
 import Image from "next/image";
 import styles from './about_us.module.scss'
+import Link from 'next/link';
 
 export const AboutUs = () => {
   const { t } = useTranslation('common')
   const { sm, md } = useMediaQueryHook()
+
   return (
     <section className='h-[calc(100dvh-5rem)] max-h-[756px] mdd:h-auto w-full mb-3' id="about_us">
       <div className='relative flex h-full w-full'>
@@ -30,7 +32,7 @@ export const AboutUs = () => {
             <span className={`uppercase xs:text-2xl text-lg pl-2 xs:text-left md:text-center Sfera text-primary`}>{t("developer")}</span>
             {
               (sm || md) && <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary rounded-[4px] items-center flex justify-center h-10 hover:cursor-pointer mt-10 text-primary hover:text-white w-3/5 hover:scale-[1.02] transition-transform duration-300 transform-origin-center ease-in-out">
-                <span className="uppercase text-center text-xs Sfera hover:cursor-pointer">{t('get_resume')}</span>
+                <Link href='/#my_resume' className="uppercase text-center text-xs Sfera hover:cursor-pointer">{t('get_resume')}</Link>
               </div>
             }
             <div className='w-full contents'>
@@ -43,7 +45,7 @@ export const AboutUs = () => {
 
             {
               (sm || md) && <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary hover:!text-white rounded-[4px] items-center flex justify-center h-10 hover:cursor-pointer mt-10 w-3/5 hover:scale-[1.02] transition-transform duration-300 transform-origin-center ease-in-out">
-                <span className="uppercase text-center text-xs Sfera hover:cursor-pointer dark:text-white hover:!text-white">{t('send_msg')}</span>
+                <Link href={'/#contact_me'} className="uppercase text-center text-xs Sfera hover:cursor-pointer dark:text-white hover:!text-white">{t('send_msg')}</Link>
               </div>
             }
           </div>
