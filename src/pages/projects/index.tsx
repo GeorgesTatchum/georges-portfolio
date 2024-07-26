@@ -13,16 +13,18 @@ export default function ProjectPage() {
             {
                 <>
                     <Navbar />
-                    <div className='max-w-6xl mx-auto px-4 flex justify-start items-end gap-3 mt-4'>
-                        <ExclamationTriangle size={24} color='#FFBD2E' />
-                        <div className='flex justify-center text-start'>
+                    <div className='max-w-6xl mx-auto px-4 flex justify-start items-end gap-3 mt-4 xs:flex-col xs:justify-center xs:items-center'>
+                        
+                        <div className='flex justify-center text-start gap-3'>
+                            <ExclamationTriangle size={24} color='#FFBD2E' />
                             <span className='text-base text-[#FFBD2E]'>
                                 {t('warning')}
                             </span>
-                            <span className='text-base'>
+                            
+                        </div>
+                        <span className='text-base text-center'>
                                 {t('disclaimer')}
                             </span>
-                        </div>
                         
                     </div>
                     <SliderCustom items={projects_data} autoSlide={true} />
