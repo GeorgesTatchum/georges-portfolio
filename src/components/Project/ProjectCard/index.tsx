@@ -7,20 +7,25 @@ import { useRouter } from 'next/router'
 import CustomButton from '@/components/core/CustomButton'
 
 interface CardProps {
+    id: number
     e: ProjectType;
     className?: string;
     active?: boolean;
+    transition?: boolean
 }
 
 const ProjectCard = (props: CardProps) => {
     const { theme } = useTheme()
-    const { t } = useTranslation('common')
+    const { t, lang } = useTranslation('common')
     const router = useRouter()
+    
     return (
         <div
-            className={`${styles.card} ${props.className} ${props.active ? styles.active : ''} ${theme === 'dark' ? "cardProject" : "cardProjectLight"} border-gray/5 dark:border-white/20 `}
+            className={`${styles.card} ${props.className} ${props.active ? styles.active : ''} ${theme === 'dark' ? "cardProject" : "cardProjectLight"} border-gray/5 dark:border-white/20 ${ props.transition === true ? 'hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer' : '' }`}
         >
-            <div className={`${props.active ? 'w-[114px]' : 'w-20'} aspect-square rounded bg-white`}>
+            <div className={`${props.active ? 'w-[114px]' : 'w-20'} aspect-square rounded bg-transparent block`} 
+            style={{background: `url(${props.e.logo})`, backgroundPosition: 'center', backgroundSize: props.id === 0 ? "contain" : 'cover', backgroundRepeat: 'no-repeat'}}
+            >
             </div>
             <div className={`flex flex-col mt-5 ${props.active ? 'gap-10' : 'gap-3'}`}>
                 <div className={`uppercase Sfera text-left content-start flex flex-col justify-around`}>
@@ -30,13 +35,13 @@ const ProjectCard = (props: CardProps) => {
                 <div className="overflow-hidden">
                     <span
                         className={`font-light text-left ${styles.description} select-none`}>
-                        {props.e.descript}
+                        {lang === 'fr' ? props.e.introduction.fr : props.e.introduction.en}
                     </span>
                 </div>
             </div>
-            <CustomButton title={t('open_project')} className='mt-[6px] w-fit' onClick={()=> {if (props.active === true) {
-                router.push('/projects/1')
-            }}}/>
+            <CustomButton title={t('open_project')} className='mt-[6px] w-fit' onClick={()=> {
+                router.push(`/projects/${props.id}`)
+            }}/>
         </div >
     )
 }

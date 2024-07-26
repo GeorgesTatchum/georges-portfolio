@@ -5,8 +5,7 @@ const handlebars = require("handlebars");
 
 export default async function handler(req: any, res: any) {
   if (req.method === 'POST') {
-    const { 
-        first_name, 
+    const {
         name, 
         society, 
         phone, 
@@ -31,11 +30,11 @@ export default async function handler(req: any, res: any) {
       try{
         if(file_name != undefined && file_name != '' && !!file_name){
             const mailOptions = {
-                from: `"LEWIS TINA" <${process.env.CONTACT_FORM_USERNAME}>`,
+                from: `"GEORGES TATCHUM" <${process.env.CONTACT_FORM_USERNAME}>`,
                 replyTo: email,
                 to: process.env.PERSONAL_MAIL,
                 subject: 'Nouveau message de contact',
-                text:`Nom: ${first_name} ${name}\nEmail: ${email}\ntéléphone: ${phone}\nMessage: ${message || ''}\nsociety:${society || ''},
+                text:`Nom: ${name}\nEmail: ${email}\ntéléphone: ${phone}\nMessage: ${message || ''}\nsociety:${society || ''},
                      `,
                 attachments: [
                 {
@@ -51,11 +50,11 @@ export default async function handler(req: any, res: any) {
     
           else {
             const mailOptions = {
-                from: `"LEWIS TINA" <${process.env.CONTACT_FORM_USERNAME}>`,
+                from: `"GEORGES TATCHUM" <${process.env.CONTACT_FORM_USERNAME}>`,
                 replyTo: email,
                 to: process.env.PERSONAL_MAIL,
                 subject: 'Nouveau message de contact',
-                text:`Nom: ${first_name} ${name}\nEmail: ${email}\ntéléphone: ${phone}\nMessage: ${message || ''}\nsociety:${society || ''},
+                text:`Nom: ${name}\nEmail: ${email}\ntéléphone: ${phone}\nMessage: ${message || ''}\nsociety:${society || ''},
                      `,
               };
         
@@ -69,7 +68,7 @@ export default async function handler(req: any, res: any) {
         var date = new Date(Date.now())
         var finalDate = date.toLocaleString('fr', {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false})
 
-        var replacements = {first_name: first_name, name: name, date: finalDate}
+        var replacements = {name: name, date: finalDate}
         try {
         var htmlToSend = template(replacements);
         }
@@ -82,10 +81,10 @@ export default async function handler(req: any, res: any) {
         }
 
         const mailOptions = {
-            from: `"LEWIS TINA" <${process.env.CONTACT_FORM_USERNAME}>`,
+            from: `"GEORGES TATCHUM" <${process.env.CONTACT_FORM_USERNAME}>`,
             to: email,
             subject: "Réponse automatique",
-            html: htmlToSend, // html body
+            html: template, // html body
           }
       
           // Envoyez l'e-mail
@@ -106,6 +105,6 @@ export default async function handler(req: any, res: any) {
   }
 
   else {
-  res.send('Lewis tina node js mailer');
+  res.send('Georges.T node js mailer');
   }
 }

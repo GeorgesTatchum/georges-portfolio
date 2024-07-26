@@ -33,21 +33,9 @@ function Skills() {
                         <div className={`${styles.cardProject}`}>
                             <div className='flex flex-col justify-start gap-5 '>
                             {
-                                skills.slice(0, 9).map((e, index) => (
+                                skills.map((e, index) => (
                                     <>
                                         <div className='self-start'>
-                                            <span key={index} className="uppercase text-center text-sm Sfera text-white">{t(e)}</span>
-                                        </div>
-                                    </>
-
-                                ))
-                            }
-                            </div>
-                            <div className='flex flex-col justify-start gap-5 '>
-                            {
-                                skills.slice(10, skills.length).map((e, index) => (
-                                    <>
-                                        <div className='self-end'>
                                             <span key={index} className="uppercase text-center text-sm Sfera text-white">{t(e)}</span>
                                         </div>
                                     </>

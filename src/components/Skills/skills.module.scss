@@ -62,6 +62,23 @@
                 background: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
             }
 
+            &:after {
+                position: absolute;
+                content: '';
+                height: 150px;
+                width: 20px;
+                background: #ffffff;
+                box-shadow: 0 0 10px #fff;
+                filter: blur(1px);
+                opacity: .2;
+                top: -30px;
+                transition: .8s;
+                transform: rotate(-20deg) translateX(-60px);
+            }
+            &:hover:after {
+                transform: rotate(-20deg) translate(140px, 70px);
+            }
+
             .img {
                 position: absolute;
                 top: 0;
@@ -127,7 +144,21 @@
         height: 140px;
         width: 140px;
         background: radial-gradient(circle at center, #45FFCD 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%);
-        filter: blur(10px);
+        filter: blur(35px);
+        transition: all 1s;
+        animation: clign 5s ease-out infinite;
+
+        @keyframes clign {
+            0% {
+                background: radial-gradient(circle at center, #45FFCD 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%); 
+            }
+            50% {
+                background: radial-gradient(circle at center, #45FFCD50 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%); 
+            }
+            100% {
+                background: radial-gradient(circle at center, #45FFCD20 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%); 
+            }
+        }
     }
     
     &::after {
@@ -138,6 +169,20 @@
         height: 72px;
         width: 72px;
         background: radial-gradient(80% 95.81% at 93.56% 35.8%, #45FFCD 14%, #182E33 100%);
+        transform-origin: center center;
+        animation: moveHorizontal 25s ease infinite;
+
+        @keyframes moveHorizontal {
+            0% {
+                transform: translateX(-50%) translateY(-10%);;
+            }
+            50% {
+                transform: translateX(50%) translateY(10%);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-10%);
+            }
+        }
     }
 
 }
@@ -168,6 +213,22 @@
         height: 227px;
         width: 227px;
         background: radial-gradient(95.42% 95.42% at 95.83% 16.38%, #7B00FF 0%, rgba(123, 0, 255, 0.64) 22.3%, rgba(123, 0, 255, 0.38) 53.46%, rgba(123, 0, 255, 0.00) 100%);
+        transform-origin: center center;
+        animation: moveInCircle 25s ease infinite;
+
+        @keyframes moveInCircle {
+            0% {
+                transform: rotate(0deg);
+                filter: blur(10px);
+            }
+            50% {
+                transform: rotate(180deg) translateX(-50%);
+                filter: blur(20px);
+            }
+            100% {
+                transform: rotate(360deg) translateY(-10%);
+            }
+        } 
     }
 }
 

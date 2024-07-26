@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
 import setLanguage from 'next-translate/setLanguage'
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import * as Icon from 'react-bootstrap-icons';
+import styles from './index.module.scss'
 
 export default function SwitchLang() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function SwitchLang() {
       }}
     >
       <Icon.Translate size={20}/>
-      <span className="ml-2 text-left text-[10px] uppercase hover:underline Sfera underline-animation inset-x-0">{lang}</span>
+      <span className={`ml-2 text-left text-[10px] uppercase Sfera hover:text-primary ${styles.linkItem}`}>{lang}</span>
     </div>
   );
 }
