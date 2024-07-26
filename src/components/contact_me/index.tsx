@@ -1,33 +1,124 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import InputTextField from './InputTextField'
 import { useForm } from 'react-hook-form'
 import InputTextArea from './InputTextArea'
-import Image from 'next/image'
 import styles from './contact.module.scss'
+import useTranslation from 'next-translate/useTranslation'
 
-function    Contact() {
-    const [isLoading, setIsLoading] = useState<boolean>(false)
-    const { register, handleSubmit, formState: { errors } } = useForm()
 
-    const onSubmit = (object: any) => {
-        console.log("object to submit : ", object);
-
-    }
+function Alert(props: any){
+    const {status} = props
+    const {t} = useTranslation('common')
     return (
-        <section className='w-full h-full dark:bg-gradient-to-t from-[#03011000_0%] to-[#030110_100%] py-8' id='contact_me'>
+        <div 
+            className={`flex items-center p-3 pr-6 rounded-lg mb-10`}
+            style={{backgroundColor: `${
+                status == 200 ?
+                "#35DB0030" :
+                "rgba(255, 0, 0, 0.30)"
+            }`,border: `${
+                status == 200 ?
+                "solid 2px #35DB00" :
+                "solid 2px rgb(255, 0, 0)"
+            }`}}>
+            <i className= {`material-icons`} style={{marginRight: "0.5em", fontSize: "1.5em"}}>
+            {
+            status == 200 ?
+            "\ue86c" :
+            "\ue002"
+          }
+            </i>
+          <span>
+          {
+            status == 200 ?
+            t('successfull_message') :
+            t('error_message')
+          }
+        </span>
+        </div>
+    )
+}
+function    Contact() {
+    const [isFetching, setIsFetching] = useState(false)
+    const [status, setStatus] = useState<any>(undefined)
+    const [isFinish, setIsFinish] = useState(true)
+    const { register, handleSubmit, formState: { errors } } = useForm()
+    const {t, lang} = useTranslation('common')
+
+    const onSubmit = async (d: any) => {
+        setIsFetching(true)
+        
+        const postData = {
+            email: d.email || '',
+            message: d.message || '',
+            name: d.username || '',
+            phone: d.phone || '',
+            society: d.society || ''
+        }
+
+
+        const url = "/api/mail"
+
+        let headers: any = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept-Language": `${lang || "fr"};q=0.9`
+          },
+          mode: "cors",
+          cache: "default",
+          body: JSON.stringify(postData)
+        }
+
+        let response = await fetch(url, headers)
+        .then(response => {
+            console.log(response)
+            return response;
+        })
+        .catch(err => {
+            console.log(err)
+            return err;
+        });
+        console.log(response)
+        setStatus(response.status)
+        return response;
+    }
+
+    useEffect(() => {
+        if (isFinish) {
+            const finishTimeout = setTimeout(() => {
+                setIsFinish(false);
+            }, 8000);
+    
+            return () => {
+                clearTimeout(finishTimeout);
+            };
+        }
+    
+        if (!!status) {
+            const statusTimeout = setTimeout(() => {
+                setIsFetching(false);
+                setStatus(undefined);
+            }, 8000);
+    
+            return () => {
+                clearTimeout(statusTimeout);
+            };
+        }
+    }, [isFinish, status]);
+    return (
+        <section className='w-full dark:bg-gradient-to-t from-[#03011000_0%] to-[#030110_100%] pt-10 pb-36 overflow-hidden' id='contact_me'>
 
             <div
-                className="relative flex flex-col items-center xs:mx-12"
-            // style={{ background: `url(/universe_bubble_bg.svg)`, backgroundRepeat: 'no-repeat', backgroundPositionX: 'center', backgroundPositionY: "center" }}
+                className="xs:mt-10 relative flex flex-col items-center xs:mx-12"
             >
-                <div className='Sfera contact-gradient dark:contact-gradient-dark text-7xl xs:text-5xl uppercase text-center flex flex-col justify-center z-10 translate-y-2 xs:translate-y-0'>
-                    <span>start this </span>
-                    <span>connection </span>
+                <div className='Sfera contact-gradient dark:contact-gradient-dark text-8xl sm:text-6xl md:text-7xl xs:text-[40px] uppercase text-center flex flex-col justify-center'>
+                    <span className='whitespace-pre-line'>{t("hire_me")}</span>
                 </div>
-                <div className={`${styles.form} w-[320px] xs:mt-3 bg-white/10`}>
+                <div className={`${styles.form} w-[320px] -mt-4 z-10 xs:mt-3 bg-white/10`}>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
-                        className={`${styles.formContent}`} style={{ backdropFilter: 'blur(10px)', boxShadow: '0 25px 45px rgb(0, 0, 0, .35)' }}>
+                        className={`${styles.formContent}`} style={{ backdropFilter: 'blur(10px)'}}>
                         <InputTextField
                             placeholder={'your name'}
                             controller={register}
@@ -55,29 +146,25 @@ function    Contact() {
                             name='society'
                             type='text'
                         />
+                        
                         <InputTextArea
                             placeholder={'message'}
                             controller={register}
                             name='message'
                         />
-                        <button
-                            type="submit"
-                            disabled={isLoading}
-                            className='Sfera text-xs self-end uppercase bg-darkest/10 dark:bg-white/10 rounded-md py-4 px-4 hover:bg-primary hover:text-white'
-                        >
-                            send request
-                        </button>
+                        {
+                           !!status ?
+                           <Alert status={status}/> :
+                            <button
+                                type="submit"
+                                className={`Sfera text-[12px] leading-[10px] self-end uppercase bg-darkest/10 dark:bg-white/10 rounded-[4px] py-4 px-4 hover:bg-primary dark:hover:bg-primary hover:text-white dark:hover:text-white ${isFetching == true && 'bg-primary'}`}
+                            >
+                                {t(isFetching ? "loading" : "send_request")}
+                            </button>
+                        }
 
                     </form>
                 </div>
-                {/* <Image
-                    width={75}
-                    height={75}
-                    src="/green_bubble.svg"
-                    alt="green_bubble"
-                    className='z-30 -translate-x-28 xs:-translate-x-28 -translate-y-10 xs:-translate-y-10 ml-10 xs:ml-30'
-                /> */}
-
             </div>
 
         </section>
