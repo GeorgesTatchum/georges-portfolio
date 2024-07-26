@@ -88,9 +88,27 @@
         border-radius: 50%;
         height: 129px;
         width: 129px;
-        background: radial-gradient(circle at center, #45FFCD 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%);
+        background: radial-gradient(circle at center, #007aff 0%, #007aff64 22%, #007aff38 53%, #007aff00 100%);
         filter: blur(15px);
     }
+}
+:global(.dark) {
+    .stack_bg_1 {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: -10;
+            bottom: -35%;
+            right: 0%;
+            border-radius: 50%;
+            height: 129px;
+            width: 129px;
+            background: radial-gradient(circle at center, #45FFCD 0%, #45FFCD64 22%, #45FFCD38 53%, #45FFCD00 100%);
+            filter: blur(15px);
+        }
+    }
+    
 }
 
 .stack_bg_2 {
