@@ -4,7 +4,7 @@ export const projects_data: ProjectType[] = [
     {
         'title': 'My portfolio',
         'type': 'web site',
-        'logo': '/portfolio/logo.png',
+        'logo': '/portfolio/logo.webp',
         'introduction': {
             "fr": "Ce portfolio, conçu et développé par moi-même, présente mon travail et mes réalisations. Certaines de mes réalisations ne sont pas incluses en raison de leur nature confidentielle.",
             "en": "This portfolio, designed and developed by myself, presents my work and achievements. Some of my work is not included because of its confidential nature."
@@ -21,7 +21,7 @@ export const projects_data: ProjectType[] = [
             }
         ],
         'images': {
-            'cover': "",
+            'cover': "/portfolio/22.webp",
             'others': [
                 
             ]
@@ -41,7 +41,7 @@ export const projects_data: ProjectType[] = [
     {
         'title': 'revotask',
         'type': 'web app',
-        'logo': '/revo/logo.jpeg',
+        'logo': '/revo/logo.webp',
         'introduction': {
             "fr": "Ce projet vise à développer une application web (dans un premier temps) pour la gestion des interactions entre professionnels. Le développement est réalisé selon une approche agile.",
             "en": "The aim of this project is to develop a web application (initially) for managing interactions between professionals. Development is being carried out using an agile approach."
@@ -58,7 +58,7 @@ export const projects_data: ProjectType[] = [
             }
         ],
         'images': {
-            'cover': "/revo/cover.png",
+            'cover': "/revo/cover.webp",
             'others': [
                 
             ]
@@ -77,7 +77,7 @@ export const projects_data: ProjectType[] = [
     },{
         'title': 'factauto',
         'type': 'web/mobile app',
-        'logo': '/factauto/Logo_FactAuto.png',
+        'logo': '/factauto/logo.webp',
         'introduction': {
             "fr": "Ce projet vise à développer une application de facturation disponible sur plusieurs plateformes, incluant une application web ainsi qu'une application mobile hybride compatible avec Android et iOS. Ce projet est mis en œuvre selon une approche agile.",
             "en": "This project aims to develop an invoicing application available on several platforms, including a web application as well as a hybrid mobile application compatible with Android and iOS. This project is implemented using an agile approach. This method allows steps to be gradually adjusted and modified throughout the design and development of the project, thus promoting its continuous evolution."
@@ -94,9 +94,9 @@ export const projects_data: ProjectType[] = [
             }
         ],
         'images': {
-            'cover': "/factauto/FactAuto_introduicing.png",
+            'cover': "/factauto/cover.webp",
             'others': [
-                "/factauto/Visuel_Doc_FactAuto.png", "/factauto/Visuel_App_FactAuto.png"
+                "/factauto/1.webp", "/factauto/2.webp"
             ]
         },
         'stack': [
@@ -171,9 +171,9 @@ export const projects_data: ProjectType[] = [
             }
         ],
         'images': {
-            'cover': "/carla/cover.png",
+            'cover': "/carla/cover.webp",
             'others': [
-                "/carla/1.png", "/carla/2.png", "/carla/3.png"
+                "/carla/1.webp", "/carla/2.webp", "/carla/3.webp"
             ]
         },
         'stack': [
@@ -193,7 +193,7 @@ export const projects_data: ProjectType[] = [
     {
         'title': 'Cameroun In Pocket',
         'type': 'mobile app',
-        'logo': '/cp/Logo_CP_Final-05.png',
+        'logo': '/cp/logo.webp',
         'introduction': {
             "fr": "Ce projet vise à développer une application mobile multi plateforme qui vise à promouvoir la culture camerounaise.",
             "en": "The aim of this project is to develop a multi-platform mobile application to promote Cameroonian culture."
@@ -210,9 +210,9 @@ export const projects_data: ProjectType[] = [
             }
         ],
         'images': {
-            'cover': "/cp/Mockups_CP_for_Instagram_First_Screen.png",
+            'cover': "/cp/cover.webp",
             'others': [
-                "/cp/cp-0.png", "/cp/cp-1.png", "/cp/cp-2.png"
+                "/cp/cp-0.webp", "/cp/cp-1.webp", "/cp/cp-2.webp"
             ]
         },
         'stack': [
@@ -230,7 +230,7 @@ export const projects_data: ProjectType[] = [
     {
         'title': 'Trovavia',
         'type': 'web & mobile app',
-        'logo': '/trovavia/logo.png',
+        'logo': '/trovavia/logo.webp',
         'introduction': {
             "fr": "Ce projet en équipe est une application de réservation de voyage disponible sur plusieurs plateformes, incluant une application web, un dashboard ainsi qu'une application mobile hybride compatible avec Android et iOS. Ce projet est mis en œuvre selon une approche agile.",
             "en": "This team project is a travel booking application available on several platforms, including a web application, a dashboard and a hybrid mobile application compatible with Android and iOS. The project is being implemented using an agile approach."
@@ -246,8 +246,9 @@ export const projects_data: ProjectType[] = [
             }
         ],
         'images': {
-            'cover': "/trovavia/cover.png",
+            'cover': "/trovavia/cover.webp",
             'others': [
+                "/trovavia/1.webp"
             ]
         },
         'stack': [
@@ -267,7 +268,7 @@ export const projects_data: ProjectType[] = [
     {
         'title': 'Cooltchop',
         'type': 'web & mobile app',
-        'logo': '/cooltchop/logo.jpg',
+        'logo': '/cooltchop/logo.webp',
         'introduction': {
             "fr": "Ce projet en équipe est une application   disponible sur plusieurs plateformes, incluant une application web ainsi qu'une application mobile hybride compatible avec Android et iOS.",
             "en": "This team project is an application available on several platforms, including a web application and a hybrid mobile application compatible with Android and iOS."
@@ -291,9 +292,9 @@ export const projects_data: ProjectType[] = [
             },
         ],
         'images': {
-            'cover': "/cooltchop/cover.png",
+            'cover': "/cooltchop/cover.webp",
             'others': [
-                "/cooltchop/1.png", "/cooltchop/2.png"
+                "/cooltchop/1.webp", "/cooltchop/2.webp"
             ]
         },
         'stack': [

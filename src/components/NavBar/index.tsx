@@ -48,7 +48,7 @@ export default function Navbar(props: NavbarProps) {
     return (
         <header className={`w-full py-4 sticky top-0 flex bg-transparent z-50 backdrop-blur-xl ${scrolled ?? 'text-white'}`}>
             <div className="flex gap-4 w-full max-w-6xl mx-auto px-4">
-                <Link href='/' className="flex items-center mr-auto">
+                <Link href='/'  className="flex items-center mr-auto">
                     <LightningChargeFill size={24} color="#7B00FF" />
                     <span className={`uppercase text-xl leading-6 pl-2 text-center Sfera hover:cursor-pointer xs:hidden mdd:hidden ${styles.fake_logo}`}>
                        {"georges tatchum"} 

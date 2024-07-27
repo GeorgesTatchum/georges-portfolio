@@ -119,6 +119,8 @@ const Project = () => {
                     <div className='flex mt-5 px-4 justify-between w-full'>
                         <div className='flex gap-6 xs:gap-3 items-center'>
                             <button
+                                id='btnLeft'
+                                title='Left'
                                 onClick={handleNext} 
                                 className='p-3 bg-black rounded-md dark:bg-white hover:cursor-pointer'>
                                 <ArrowLeft color={theme != 'dark' ? '#FFFFFF' : '#000000'} size={16} />
@@ -131,7 +133,9 @@ const Project = () => {
                                     /3
                                 </span>
                             </div>
-                            <button 
+                            <button
+                                id='btnRight'
+                                title='Right' 
                                 onClick={handlePrev} 
                                 className='p-3 bg-black rounded-md dark:bg-white hover:cursor-pointer'>
                                 <ArrowRight color={theme != 'dark' ? '#FFFFFF' : '#000000'} size={16} />
