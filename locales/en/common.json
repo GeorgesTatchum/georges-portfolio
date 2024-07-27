@@ -43,5 +43,6 @@
     "project_link": "Project link(s)",
     "in_process": "In development ...",
     "disclaimer": "\tThis is a non-exhaustive list, due to the confidentiality of certain projects.",
-    "warning": "Warning : "
+    "warning": "Warning : ",
+    "page_not_found": "Page not found"
 }

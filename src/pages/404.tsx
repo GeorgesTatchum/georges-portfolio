@@ -3,6 +3,7 @@ import Navbar from "@/components/NavBar";
 import useTranslation from "next-translate/useTranslation";
 import { DM_Sans } from 'next/font/google'
 import Image from 'next/image';
+import { LightningChargeFill } from "react-bootstrap-icons";
 
 const dm_sans = DM_Sans(
     {
@@ -14,12 +15,12 @@ const dm_sans = DM_Sans(
 const Content404 = () => {
     const { t } = useTranslation('common')
     return (
-        <div className="flex justify-center items-center h-[calc(100vh-80px)]">
+        <div className="flex justify-center items-center h-[calc(100vh-80px)] text-primary">
             <div className="">
                 <div className="flex sm:flex-col sm:items-center">
                     <div className="flex items-center">
                         <div className="">
-                            <Image src="charge_icon.svg" alt="logo" width={50} height={50} />
+                        <LightningChargeFill size={45} color="#7B00FF" />
                         </div>
                         <div className="flex px-6 border-r-2 sm:border-r-0 border-darkest dark:border-white">
                             <span className="text-6xl">
