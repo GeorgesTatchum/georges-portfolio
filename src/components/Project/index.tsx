@@ -62,7 +62,7 @@ const Project = () => {
                 <div className={styles.frame}>
                     <Image
                         className={`${styles.image} xs:hidden`}
-                        src={theme === 'dark' ? "/project_card.png" : "/project_card_white.svg"}
+                        src={theme === 'dark' ? "/project_card.png" : "/project_card_white.png"}
                         height={500}
                         width={500}
                         alt="cover_image" />   

@@ -11,7 +11,8 @@ div:has(>.image) {
 
 .image {
     @apply 
-    ml-auto
+    lgd:ml-auto
+    ml-[10%]
     w-[640px]
     h-auto;
 }
