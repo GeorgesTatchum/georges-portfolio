@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
 import setLanguage from 'next-translate/setLanguage'
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -27,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <Component {...pageProps} />
       <Analytics />
+      <SpeedInsights/>
     </ThemeProvider>
   )
 }
