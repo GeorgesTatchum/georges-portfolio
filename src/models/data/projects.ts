@@ -39,6 +39,42 @@ export const projects_data: ProjectType[] = [
         ]
     },
     {
+        'title': 'revotask',
+        'type': 'web app',
+        'logo': '/revo/logo.jpeg',
+        'introduction': {
+            "fr": "Ce projet vise à développer une application web (dans un premier temps) pour la gestion des interactions entre professionnels. Le développement est réalisé selon une approche agile.",
+            "en": "The aim of this project is to develop a web application (initially) for managing interactions between professionals. Development is being carried out using an agile approach."
+        },
+        'resume': {
+            "fr": "Conception d'une application dont le but est de transformer la gestion de vos communications professionnelles à l'aide de l'intelligence artificielle. J'occupais la fonction de développeur backend. Mes responsabilités incluaient :\nDéveloppement d'un microservice de file d'attente et de planification de tâches informatiques,\nImplémentation du mode collaboratif entre utilisateurs,\nDéveloppement de fonctionnalités liées à la sécurité, ainsi que diverses autres fonctionnalités et correctifs.",
+            "en": "Design of an application to transform the management of your business communications using artificial intelligence. I was a backend developer. My responsibilities included:\nDevelopment of a micro service for queuing and scheduling IT tasks,\nImplementation of a collaborative mode between users,\nDevelopment of security-related functionalities, as well as various other functionalities and patches."
+        
+        },
+        'url': [
+            {
+                "name": "website",
+                "link": "https://revotask.com/"
+            }
+        ],
+        'images': {
+            'cover': "/revo/cover.png",
+            'others': [
+                
+            ]
+        },
+        'stack': [
+            [
+                    "python", "fastapi", "postgresql", "redis", "celery", "rabbitmq", "flower", "gcp", "docker", "nginx"
+            ],
+           [
+                    "flutter"
+            ],
+            [
+            ],
+            
+        ]
+    },{
         'title': 'factauto',
         'type': 'web/mobile app',
         'logo': '/factauto/Logo_FactAuto.png',
