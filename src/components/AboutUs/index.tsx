@@ -21,7 +21,7 @@ export const AboutUs = () => {
             alt="cover_image" />
         </div>
         <div className='w-full absolute top-28 md:top-1/4 lg:top-1/4 xs:left-0 right-0 z-1 px-4' id='about_us_content'>
-          <div className='max-w-6xl mx-auto flex flex-col smd:items-start items-end'>
+          <div className='max-w-[1536px] mx-auto flex flex-col smd:items-start items-end'>
             <div className='flex flex-row justify-end items-center mb-5 overflow-hidden'>
               <span className='uppercase text-base Sfera mr-2'>{t('my_name_is')}</span>
               <div className={`bg-primary rounded-md items-center flex justify-center p-2`}>
@@ -32,7 +32,7 @@ export const AboutUs = () => {
             <span className={`uppercase xs:text-2xl text-lg pl-2 xs:text-left md:text-center Sfera text-primary`}>{t("developer")}</span>
             {
               (sm || md) && <div className="dark:bg-white/10 bg-gray bg-opacity-10 hover:!bg-primary rounded-[4px] items-center flex justify-center h-10 hover:cursor-pointer mt-10 text-primary hover:text-white w-3/5 hover:scale-[1.02] transition-transform duration-300 transform-origin-center ease-in-out">
-                <Link href='/#my_resume' className="uppercase text-center text-xs Sfera hover:cursor-pointer">{t('get_resume')}</Link>
+                <Link href='/CVS_TATCHUM.pdf' target='_blank' className="uppercase text-center text-xs Sfera hover:cursor-pointer">{t('get_resume')}</Link>
               </div>
             }
             <div className='w-full contents'>

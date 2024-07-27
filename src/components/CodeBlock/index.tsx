@@ -1,5 +1,8 @@
 import '@/components/CodeBlock/'
 import parse from 'html-react-parser'
+import { Roboto_Mono } from 'next/font/google'
+
+const robotMono = Roboto_Mono({ subsets: ['latin'] })
 
 export const CodeBlock = (props: { description: string, className?: string, second?: boolean }) => {
     const { description, className, second } = props
@@ -7,7 +10,7 @@ export const CodeBlock = (props: { description: string, className?: string, seco
     let year = new Date().getFullYear() - 2020
 
     return (
-        <div className={`flex flex-col gap-3 p-3 dark:bg-[#0A1A22] text-sm ${className} relative bg-white rounded-lg`}>
+        <div className={`flex flex-col gap-3 p-3 dark:bg-[#0A1A22] text-sm ${className} relative bg-white rounded-lg ${robotMono.className}`}>
             <div className='flex gap-2'>
                 {
                     colors.map((e, index) => (
@@ -18,9 +21,9 @@ export const CodeBlock = (props: { description: string, className?: string, seco
 
             </div>
             <div className='flex'>
-                <div className={`flex-shrink-0 text-right pr-3 ${second === true ? 'leading-7' : 'leading-8'}`}>
-                    {(second === true ? (description.split("\n")).concat(["1", "2", "3", "4","5","6"]) : description.split("\n")).map((_, index) => (
-                        <span key={index} className={`block text-[#666666] `}>{index + 1}</span>
+                <div className={`flex-shrink-0 text-right pr-3 ${second === true ? 'leading-7' : 'leading-'}`}>
+                    {(second === true ? (description.split("\n")).concat(["1", "2", "3", "4","5","6","1", "2", "3", "4","5","6", "1", "2", "3", "4","5","6"]) : (description.split("\n")).concat(["1", "2", "3", "4","5","6","1", "2", "3", "4","5","6","1", "2", "3", "4","5","6"])).map((_, index) => (
+                        <span key={index} className={`block text-[#666666] text-xs `}>{index + 1}</span>
                     ))}
                 </div>
                 <div className="flex-grow pl-3 text-xs leading-6">

@@ -8,13 +8,6 @@ import useTranslation from 'next-translate/useTranslation'
 import Title from '@/components/core/Title';
 import { projects_data } from '@/models/data/projects';
 
-type TechStack = {
-    back?: string[];
-    front?: string[];
-    mobile?: string[];
-  };
-
-
 export default function ProjectDetails () {
     const {t, lang} = useTranslation('common')
     const router = useRouter()
@@ -26,7 +19,7 @@ export default function ProjectDetails () {
                     <Navbar />
                     <section className={`h-full w-full relative`}>
                         <div className="bg-[url('/noise.svg')] inset-0 absolute -z-10 mix-blend-difference dark:mix-blend-normal">&nbsp;</div>
-                        <div className={`max-w-6xl mx-auto h-full flex flex-col py-6 gap-10 px-6`}>
+                        <div className={`max-w-[1536px] mx-auto h-full flex flex-col py-6 gap-10 px-6`}>
                             <div className='w-64'>
                                 <CustomButton title='view_all_projects' onClick={()=> {router.replace('/projects')}}/>
                             </div>
@@ -102,10 +95,10 @@ export default function ProjectDetails () {
 
                                     {projects_data[Number(router.query.id)].stack.map((e, index) => e.length > 0 ? (
                                         <div key={index} className={`sm:w-[45%] md:w-[45%] xs:max-w-xs mddmin:flex-1 p-6 bg-cover bg-darkest/10 dark:bg-white/10 rounded-[15px] flex-col border-2 border-gray/10 hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer shadow ${index === 1 ? 'self-end' : 'self-start'} ${index === 0 ? styles.stack_bg_1 : index === 1 ? styles.stack_bg_2 : styles.stack_bg_3}`} style={{ backdropFilter: 'blur(10px)'}}>
-                                            <span className={`Sfera tracking-[.1em] ${index === 0 ? 'text-[#007aff] dark:text-green' : index === 1 ? 'text-primary' : 'text-[#BE9DEA]'} text-left text-2xl`}>
+                                            <span className={`uppercase font-black leading-none italic ${index === 0 ? 'text-[#007aff] dark:text-green' : index === 1 ? 'text-primary' : 'text-[#BE9DEA]'} text-left text-2xl`}>
                                             {index === 0 ? 'Back-end & DEVOPS STACK' : index === 1 ? 'WEB FRONTEND STACK' : 'MOBILE STACK' }
                                             </span>
-                                            <div className='flex gap-x-5 flex-wrap text-base Sfera mt-8 tracking-[.1em]'>
+                                            <div className='flex gap-3 flex-wrap text-base uppercase font-black leading-none italic mt-8'>
                                                 {
                                                     (e ?? []).map(
                                                         (el, index) => (<> <span key={index}>{el}</span></>))

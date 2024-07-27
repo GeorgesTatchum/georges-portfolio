@@ -147,6 +147,9 @@
         filter: blur(35px);
         transition: all 1s;
         animation: clign 5s ease-out infinite;
+        @media (max-width: 640px) {
+            right: -10px;
+        }
 
         @keyframes clign {
             0% {
@@ -203,6 +206,9 @@
         height: 107px;
         width: 107px;
         background: radial-gradient(85.99% 85.99% at 57.87% 7.48%, #BE9DEA 0.1%, #BE9DEA 46.11%, rgba(190, 157, 234, 0.60) 74.68%, rgba(190, 157, 234, 0.00) 100%);
+        @media (max-width: 640px) {
+            right: -20px;
+        }
     }
     
     &::after {

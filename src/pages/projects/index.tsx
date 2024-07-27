@@ -13,7 +13,7 @@ export default function ProjectPage() {
             {
                 <>
                     <Navbar />
-                    <div className='max-w-6xl mx-auto px-4 flex justify-start items-end gap-3 mt-4 xs:flex-col xs:justify-center xs:items-center'>
+                    <div className='max-w-[1536px] mx-auto px-4 flex justify-start items-end gap-3 mt-4 xs:flex-col xs:justify-center xs:items-center'>
                         
                         <div className='flex justify-center text-start gap-3'>
                             <ExclamationTriangle size={24} color='#FFBD2E' />

@@ -7,7 +7,7 @@ export default function Footer(props: any) {
     const { t } = useTranslation('common')
     return (
         <footer className="w-full bg-darkest/5 dark:bg-black h-full py-12">
-            <div className="max-w-6xl mx-auto px-4">
+            <div className="max-w-[1536px] mx-auto px-4">
                 <div className="flex items-center">
                     <Image src="/charge_icon.svg" alt="charge_icon" height={24} width={17} />
                     <span className={`uppercase text-lg pl-2 text-center Sfera dark:cardOutline hover:cursor-pointer`}>georges tatchum</span>

@@ -29,7 +29,7 @@ export default function InputTextArea(props: formInput) {
                 }
                 )}
                 min="0"
-                className='rounded-[4px] py-3 px-4 w-full h-40 Sfera text-xs placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10 border-none outline-none resize-none focus:outline-primary focus:outline focus:outline-2 transition-all duration-300'
+                className='rounded-[4px] py-3 px-4 w-full h-40 uppercase text-base font-black leading-none italic placeholder-darkest dark:placeholder-white bg-darkest/10 dark:bg-white/10 border-none outline-none resize-none focus:outline-primary focus:outline focus:outline-2 transition-all duration-300'
                 placeholder={placeholder}
                 onKeyUp={onChange}
             />
