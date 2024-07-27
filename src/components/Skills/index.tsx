@@ -15,7 +15,7 @@ export interface MyCustomCSS extends CSSProperties {
 
 function Skills() {
     const { t } = useTranslation('common')
-    const skills = ["Fastapi", "Django", "flask", "redis", "celery", "rabbitmq", "kubernetes", "elk", "Github/gitlab", "Gitlab-CI/CD", "Jenkins", "caddy",  "mongodb", "postgressql", "dbeaver", "tailwind", "react-query", "redux", "swift"]
+    const skills = ["Fastapi", "Django", "flask", "redis", "celery", "rabbitmq", "kubernetes", "elk", "Github/gitlab", "Gitlab-CI/CD", "Jenkins", "caddy",  "mongodb", "postgressql", "dbeaver", "tailwind css", "react-query", "redux", "swift storyboard"]
     return (
         <section
             className="w-full bg-darkest dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%] border-none mt-20"
@@ -36,7 +36,7 @@ function Skills() {
                                 skills.map((e, index) => (
                                     <>
                                         <div className='self-start'>
-                                            <span key={index} className="uppercase text-center text-sm Sfera text-white">{t(e)}</span>
+                                            <span key={index} className="uppercase text-center text-base Sfera tracking-[.15em] text-white">{t(e)}</span>
                                         </div>
                                     </>
 

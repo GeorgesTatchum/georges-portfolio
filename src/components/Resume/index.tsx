@@ -99,7 +99,7 @@ export default function Resume() {
                                         key={index}
                                         className="dark:bg-white/10 bg-gray bg-opacity-10 rounded-md items-center flex justify-center p-3"
                                     >
-                                        <span className="uppercase text-center text-sm Sfera">{t(e)}</span>
+                                        <span className="uppercase text-center text-sm Sfera tracking-[.15em]">{t(e)}</span>
                                     </div> </>
                             ))
                         }
@@ -135,7 +135,7 @@ function ResumeContent(props: { className: string }) {
 
                 </div>
                 <div className='flex flex-col items-end'>
-                    <span className='uppercase text-3xl Sfera text-primary text-end'> + {projects_data.length + 5} </span>
+                    <span className='uppercase text-3xl Sfera text-primary text-end'> + {projects_data.length + 4} </span>
                     <div className='p-0 m-0 text-end xs:w-4/5 xs:self-auto'>
                         <span className='text-base '>{t("project_part")}</span>
                     </div>
