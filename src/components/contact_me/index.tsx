@@ -157,7 +157,7 @@ function    Contact() {
                            <Alert status={status}/> :
                             <button
                                 type="submit"
-                                className={`Sfera text-[12px] leading-[10px] self-end uppercase bg-darkest/10 dark:bg-white/10 rounded-[4px] py-4 px-4 hover:bg-primary dark:hover:bg-primary hover:text-white dark:hover:text-white ${isFetching == true && 'bg-primary'}`}
+                                className={`uppercase text-base font-black leading-none italic text-[12px] self-end bg-darkest/10 dark:bg-white/10 rounded-[4px] py-3 px-6 hover:bg-primary dark:hover:bg-primary hover:text-white dark:hover:text-white ${isFetching == true && 'bg-primary'}`}
                             >
                                 {t(isFetching ? "loading" : "send_request")}
                             </button>

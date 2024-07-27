@@ -15,7 +15,7 @@ const Project = () => {
     const { t } = useTranslation('common')
     const router = useRouter()
     const { theme } = useTheme()
-    const { md} = useMediaQueryHook()
+    const { lgd} = useMediaQueryHook()
     const [ currentIndexProject, setCurrentIndexProject ] = useState<number>(0)
     const [ activePosition, setActivePosition ] = useState<number>(0)
     const handlePrev = useCallback(() => setCurrentIndexProject((prev:number) => prev > 0 ? prev - 1 : 2), [setCurrentIndexProject])
@@ -47,8 +47,8 @@ const Project = () => {
     //   }
 
     return (
-        <section className='w-full py-4 dark:bg-gradient-to-b from-[#030110_0%] to-[#030110_100%] border-none' id='my_project'>
-            <div className='max-w-6xl mx-auto px-4 m-4'>
+        <section className='w-full py-8 dark:bg-gradient-to-b from-[#030110_0%] to-[#030110_100%] border-none' id='my_project'>
+            <div className='max-w-[1536px] mx-auto px-4 m-4'>
             {/* {
           isScrolled && 
           <div className={`h-12 w-12 rounded-[4px] fixed bottom-[5%] right-[25%] mddmin:right-[18%] bg-gray/10 backdrop-blur-xl z-50 flex justify-center items-center cursor-pointer`} onClick={scrollUp}>
@@ -58,11 +58,11 @@ const Project = () => {
             <Title title={t('my_project')} />
             </div>
             {
-                !md ? 
+                !lgd ? 
                 <div className={styles.frame}>
                     <Image
                         className={`${styles.image} xs:hidden`}
-                        src={theme === 'dark' ? "/project_card.png" : "/project_card_white.svg"}
+                        src={theme === 'dark' ? "/project_card.png" : "/project_card_white.png"}
                         height={500}
                         width={500}
                         alt="cover_image" />   
@@ -144,10 +144,10 @@ const Project = () => {
                         </div>
                         <CustomButton title={t('see_more')} className='mt-[6px] w-[171px]' onClick={()=> {router.push('/projects')}}/>
                     </div>
-                    <div className='sm:hidden'>
+                    <div className='flex justify-center'>
                         <Image
-                            className={`${styles.image}`}
-                            src={theme === 'dark' ? "/project_card.png" : "/project_card_white.svg"}
+                            className={`w-[640px]`}
+                            src={theme === 'dark' ? "/project_card.png" : "/project_card_white.png"}
                             height={500}
                             width={500}
                             alt="cover_image" />    

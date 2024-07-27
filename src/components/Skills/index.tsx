@@ -18,11 +18,11 @@ function Skills() {
     const skills = ["Fastapi", "Django", "flask", "redis", "celery", "rabbitmq", "kubernetes", "elk", "Github/gitlab", "Gitlab-CI/CD", "Jenkins", "caddy",  "mongodb", "postgressql", "dbeaver", "tailwind css", "react-query", "redux", "swift storyboard"]
     return (
         <section
-            className="w-full bg-darkest dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%] border-none mt-20"
+            className="w-full bg-darkest dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%] border-none overflow-hidden"
             id="my_skills"
         >
             <div
-                className='flex flex-col items-start max-w-6xl mx-auto px-4 pb-14 xs:pb-0 pt-10'
+                className='flex flex-col items-start max-w-[1536px] mx-auto px-4 py-14 xs:pb-0'
             >
                 <Title title={t('my_hard_skill')} className='text-white' />
                 <span className='mt-10 mb-10 text-md text-white'>
@@ -31,15 +31,10 @@ function Skills() {
                 <div className='flex justify-around w-full items-center mdd:flex-col md:gap-16 mb-6'>
                     <div className={`${styles.bubble}`}> 
                         <div className={`${styles.cardProject}`}>
-                            <div className='flex flex-col justify-start gap-5 '>
+                            <div className='flex flex-col justify-start items-start gap-5'>
                             {
                                 skills.map((e, index) => (
-                                    <>
-                                        <div className='self-start'>
-                                            <span key={index} className="uppercase text-center text-base Sfera tracking-[.15em] text-white">{t(e)}</span>
-                                        </div>
-                                    </>
-
+                                    <span key={index} className="uppercase text-base font-black leading-none italic text-white block">{t(e)}</span>
                                 ))
                             }
                             </div>
