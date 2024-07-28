@@ -22,7 +22,7 @@ function Skills() {
             id="my_skills"
         >
             <div
-                className='flex flex-col items-start max-w-[1536px] mx-auto px-4 py-14 xs:pb-0'
+                className='flex flex-col items-start max-w-6xl mx-auto px-4 py-14 xs:pb-0'
             >
                 <Title title={t('my_hard_skill')} className='text-white' />
                 <span className='mt-10 mb-10 text-md text-white'>

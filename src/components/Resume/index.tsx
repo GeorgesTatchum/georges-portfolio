@@ -61,7 +61,7 @@ export default function Resume() {
             className='w-full flex flex-col gap-6 bg-contain bg-no-repeat'
             id="my_resume"
             style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: '40% 20%', backgroundSize: '600px' }}>
-            <div className='w-full flex max-w-[1536px] mx-auto px-4 md:justify-around xs:justify-center'>
+            <div className='w-full flex max-w-6xl mx-auto px-4 md:justify-around xs:justify-center'>
                 <div className='flex justify-between gap-6 w-full'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5 flex-1'>
                         <div className='z-0 sm:w-1/2 w-1/2 xs:w-full'> 
@@ -82,7 +82,7 @@ export default function Resume() {
                     <ResumeContent className='flex flex-col justify-between mdd:hidden w-[385px]' />
                 </div>
             </div>
-            <div className='px-4 py-14 max-w-[1536px] mx-auto'>
+            <div className='px-4 py-14 max-w-6xl mx-auto'>
                 <div className='flex flex-col gap-10 items-start'>
                     <Title title={t('my_soft_skill')} />
                     <div className='flex flex-wrap items-start gap-4'>
