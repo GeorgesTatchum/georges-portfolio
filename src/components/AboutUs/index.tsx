@@ -25,7 +25,7 @@ export const AboutUs = () => {
             <div className='flex flex-row justify-end items-center mb-5 overflow-hidden'>
               <span className='uppercase text-base Sfera mr-2'>{t('my_name_is')}</span>
               <div className={`bg-primary rounded-md items-center flex justify-center p-2`}>
-                <span className="uppercase lg:text-sm md:text-xs Sfera hover:cursor-pointer text-white"> Georges.T</span>
+                <span className="uppercase lg:text-sm md:text-xs Sfera hover:cursor-pointer text-white"> Georges</span>
               </div>
             </div>
             <span className={`uppercase xs:text-6xl text-8xl text-right xs:text-left Sfera whitespace-pre-line ${styles.fake_logo}`}>{"web &\nmobile"}</span>

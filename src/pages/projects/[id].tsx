@@ -73,8 +73,8 @@ export default function ProjectDetails () {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='w-1/2 flex self-center md:self-start flex-col justify-center items-center hover:cursor-pointer hover:scale-110 duration-500 transition-all ease-in-out smd:hidden'>
-                                    <div className='w-96 h-64 bg-transparent'
+                                <div className='w-1/2 flex self-center md:self-center flex-col justify-center items-center hover:cursor-pointer hover:scale-110 duration-500 transition-all ease-in-out smd:hidden'>
+                                    <div className='w-[388px] h-[262px] bg-transparent'
                                     style={{background: `url(${projects_data[Number(router.query.id)].images.cover})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}
                                     >
 
