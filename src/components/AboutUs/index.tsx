@@ -1,6 +1,6 @@
 import useMediaQueryHook from '@/hooks/useBreakpoints'
 import useTranslation from 'next-translate/useTranslation'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from "next/image";
 import styles from './about_us.module.scss'
 import Link from 'next/link';
@@ -8,13 +8,33 @@ import Link from 'next/link';
 export const AboutUs = () => {
   const { t } = useTranslation('common')
   const { sm, md } = useMediaQueryHook()
+  const textRef = useRef<HTMLElement>(null);
+
+  // const textTypingEffect = (element: HTMLElement, text: string, i: number = 0) => {
+  //   if (i < text.length) {
+  //     console.log("the curr item : ", element.textContent);
+      
+  //     element.textContent += text[i];
+  //     setTimeout(() => {
+  //       textTypingEffect(element, text, i + 1);
+  //     }, 50);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   const element = textRef.current;
+  //   if (element) {
+  //     element.textContent = ''; // Clear the content before starting the typing effect
+  //     textTypingEffect(element, t('presentation', 0));
+  //   }
+  // }, [element, t]);
 
   return (
     <section className='h-[calc(100dvh-5rem)] max-h-[756px] mdd:h-auto w-full mb-3' id="about_us">
       <div className='relative flex h-full w-full'>
         <div className='h-full mdd:overflow-x-hidden w-full flex mdd:justify-center 2xl:justify-center' id='cover_image'>
           <Image
-            className='h-full  w-auto mdd:max-w-[unset] smd:w-[200%] md:w-[125%] 2xl:-translate-x-52 mdd:h-auto mdd:opacity-30'
+            className='h-full w-auto mdd:max-w-[unset] smd:w-[200%] md:w-[125%] 2xl:-translate-x-52 mdd:h-auto mdd:opacity-30'
             src={"/cover_image.svg"}
             height={1000}
             width={1000}
@@ -37,7 +57,7 @@ export const AboutUs = () => {
             }
             <div className='w-full contents'>
               <div className='w-3/5 xs:w-full xs:text-start text-end mt-10'>
-                <span className={`font-normal ${styles.typeWriter}`}>
+                <span className={`font-normal`} id="writer" ref={textRef}>
                 {t("presentation")}
                 </span>
               </div>
