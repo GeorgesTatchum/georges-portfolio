@@ -195,12 +195,54 @@ input::-webkit-inner-spin-button {
     left: 0;
     margin: -3px;
     border-radius: 10px;
-    background: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
+    background-image: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
+    animation: gradientAnim 30s ease-in-out infinite alternate-reverse;
   }
 
   &.borderGradientDark:before {
-    background: linear-gradient(to top, #383838, #7B7B7B, #FFFFFF);
+    background-image: linear-gradient(to top, #383838, #7B7B7B, #FFFFFF);
+    animation: gradientAnimD 30s ease-in-out infinite alternate-reverse;
   }
+
+  @keyframes gradientAnim {
+    0% {
+        background-size: 400% 400%;
+        background-position: 150%;
+        background-image: linear-gradient(to right, transparent);
+    }
+
+    50% {
+        background-size: 500% 500%;
+        background-position: 400%;
+        background-image: linear-gradient(to left, #7B00FF40 0%, #7B00FF00 100%);
+    }
+
+    100% {
+        background-size: 200% 200%;
+        background-position: 0%;
+        background-image: linear-gradient(to right, #7B00FF20 0%, #7B00FF00 100%);
+    }
+}
+
+@keyframes gradientAnimD {
+    0% {
+        background-size: 400% 400%;
+        background-position: 150%;
+        background-image: linear-gradient(to right, transparent);
+    }
+
+    50% {
+        background-size: 500% 500%;
+        background-position: 400%;
+        background-image: linear-gradient(to left, #45FFCD40 0%, #45FFCD00 100%);
+    }
+
+    100% {
+        background-size: 200% 200%;
+        background-position: 0%;
+        background-image: linear-gradient(to right, #45FFCD30 0%, #45FFCD00 100%);
+    }
+}
 }
 
 .hideToTop {
