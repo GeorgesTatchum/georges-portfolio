@@ -7,7 +7,6 @@ import Link from 'next/link'
 import useMediaQueryHook from '@/hooks/useBreakpoints'
 import Title from '../core/Title'
 import { projects_data } from '@/models/data/projects'
-import { Roboto_Mono } from 'next/font/google'
 
 export default function Resume() {
     const { t, lang } = useTranslation('common')
