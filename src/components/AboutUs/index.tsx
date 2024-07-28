@@ -21,7 +21,7 @@ export const AboutUs = () => {
             alt="cover_image" />
         </div>
         <div className='w-full absolute top-28 md:top-1/4 lg:top-1/4 xs:left-0 right-0 z-1 px-4' id='about_us_content'>
-          <div className='max-w-[1536px] mx-auto flex flex-col smd:items-start items-end'>
+          <div className='max-w-6xl mx-auto flex flex-col smd:items-start items-end'>
             <div className='flex flex-row justify-end items-center mb-5 overflow-hidden'>
               <span className='uppercase text-base Sfera mr-2'>{t('my_name_is')}</span>
               <div className={`bg-primary rounded-md items-center flex justify-center p-2`}>

@@ -48,7 +48,7 @@ const Project = () => {
 
     return (
         <section className='w-full py-8 dark:bg-gradient-to-b from-[#030110_0%] to-[#030110_100%] border-none' id='my_project'>
-            <div className='max-w-[1536px] mx-auto px-4 m-4'>
+            <div className='max-w-6xl mx-auto px-4 m-4'>
             {/* {
           isScrolled && 
           <div className={`h-12 w-12 rounded-[4px] fixed bottom-[5%] right-[25%] mddmin:right-[18%] bg-gray/10 backdrop-blur-xl z-50 flex justify-center items-center cursor-pointer`} onClick={scrollUp}>

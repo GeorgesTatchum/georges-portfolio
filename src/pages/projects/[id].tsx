@@ -7,6 +7,7 @@ import styles from './projects.module.scss'
 import useTranslation from 'next-translate/useTranslation'
 import Title from '@/components/core/Title';
 import { projects_data } from '@/models/data/projects';
+import Image from "next/image";
 
 export default function ProjectDetails () {
     const {t, lang} = useTranslation('common')
@@ -19,7 +20,7 @@ export default function ProjectDetails () {
                     <Navbar />
                     <section className={`h-full w-full relative`}>
                         <div className="bg-[url('/noise.svg')] inset-0 absolute -z-10 mix-blend-difference dark:mix-blend-normal">&nbsp;</div>
-                        <div className={`max-w-[1536px] mx-auto h-full flex flex-col py-6 gap-10 px-6`}>
+                        <div className={`max-w-6xl mx-auto h-full flex flex-col py-6 gap-10 px-6`}>
                             <div className='w-64'>
                                 <CustomButton title='view_all_projects' onClick={()=> {router.replace('/projects')}}/>
                             </div>
@@ -81,11 +82,18 @@ export default function ProjectDetails () {
 
                                 </div>
                             </div>
-                            <div className='flex gap-6 mt-5 xs:flex-col'>
+                            <div className={`mt-5 ${styles.galery_img}`}>
                                 {projects_data[Number(router.query.id)].images.others.map((e, index) => (
-                                    <div key={index} className={`flex-1 xs:flex-none w-full h-[262px]  xs:h-[246px] bg-cover bg-transparent`} 
-                                    style={{background: `url(${e})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}
-                                    />
+                                    <div className='flex justify-center items-center' key={index}>
+                                        <Image
+                                        className='h-auto max-w-full align-middle inline-block object-cover'
+                                        src={e}
+                                        height={1000}
+                                        width={1000}
+                                        alt="cover_image" />
+
+                                    </div>
+                                    
                                 ))}
                             </div>
                             <div className={`mt-10`}>
