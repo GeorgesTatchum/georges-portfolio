@@ -7,6 +7,7 @@ import Link from 'next/link'
 import useMediaQueryHook from '@/hooks/useBreakpoints'
 import Title from '../core/Title'
 import { projects_data } from '@/models/data/projects'
+import styles from './resume.module.scss'
 
 export default function Resume() {
     const { t, lang } = useTranslation('common')
@@ -64,14 +65,14 @@ export default function Resume() {
                 <div className='flex justify-between gap-6 w-full'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5 flex-1'>
                         <div className='z-0 sm:w-1/2 w-1/2 xs:w-full'> 
-                            <div className={`borderGradient dark:borderGradientDark flex-none relative hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer`}>
+                            <div className={`${styles.borderGradient} flex-none relative hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer`}>
                                 <CodeBlock description={lang === "fr" ?aboutMeData : aboutMeData_en} /> 
                             </div> 
                         </div>
                         <div
                             className='w-1/2 xs:w-full md:h-full self-end md:self-start mdd:flex mdd:flex-col md:justify-between z-10 translate-y-4 mdd:translate-y-0 mdd:gap-2 sm:w-1/2'
                         >
-                            <div className={`borderGradient dark:borderGradientDark relative hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer`}>
+                            <div className={`${styles.borderGradient} relative hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer`}>
                                 <CodeBlock description={lang === "fr" ?aboutMeData2 : aboutMeData2_en} second={true} />
                             </div>
 

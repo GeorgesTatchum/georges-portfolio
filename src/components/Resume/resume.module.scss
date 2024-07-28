@@ -1,0 +1,73 @@
+.borderGradient {
+    border: solid 2px transparent;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: -3px;
+      border-radius: 10px;
+      background-image: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
+      animation: gradientAnim 30s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes gradientAnim {
+      0% {
+          background-size: 400% 400%;
+          background-position: 150%;
+          background-image: linear-gradient(to right, transparent);
+      }
+  
+      50% {
+          background-size: 500% 500%;
+          background-position: 400%;
+          background-image: linear-gradient(to left, #7B00FF40 0%, #7B00FF00 100%);
+      }
+  
+      100% {
+          background-size: 200% 200%;
+          background-position: 0%;
+          background-image: linear-gradient(to right, #7B00FF20 0%, #7B00FF00 100%);
+      }
+  }
+  }
+  
+  :global(.dark) {
+    .borderGradient {
+      border: solid 2px transparent;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: -3px;
+        border-radius: 10px;
+        background-image: linear-gradient(to top, #38383820 0%, #7B7B7B20 34%, #FFFFFF20 100%);
+        animation: gradientAnimD 30s ease-in-out infinite alternate-reverse;
+      }
+    }
+    @keyframes gradientAnimD {
+      0% {
+          background-size: 400% 400%;
+          background-position: 150%;
+          background-image: linear-gradient(to right, transparent);
+      }
+  
+      50% {
+          background-size: 500% 500%;
+          background-position: 400%;
+          background-image: linear-gradient(to left, #45FFCD40 0%, #45FFCD00 100%);
+      }
+  
+      100% {
+          background-size: 200% 200%;
+          background-position: 0%;
+          background-image: linear-gradient(to right, #45FFCD30 0%, #45FFCD00 100%);
+      }
+    }
+  }
