@@ -46,9 +46,14 @@
             overflow: hidden;
             display: flex;
             align-items: center;
-            border: solid 2px rgba($color: #ffffff, $alpha: 0.2);
+            border: solid 4px rgba($color: #ffffff, $alpha: 0.2);
             backdrop-filter: blur(40px);
             cursor: pointer;
+            transition: all .3s;
+
+            &:hover {
+                border-width: 1px;
+            }
 
             &:before {
                 position: absolute;
@@ -242,11 +247,32 @@
     position: absolute;
     inset: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+    span {
+        opacity: 1;
+        animation: opacityN 0.1s linear forwards normal;
+        transition: all .1s;
+
+        @keyframes opacityN {
+            0% {
+                opacity: .1;
+            }
+            50% {
+                opacity: .5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
 
     &::before {
         content: '';
         position: absolute;
-        inset: 80px;
+        inset: 70px;
         border: 2px solid transparent;
         border-left: 2px solid rgb(134, 23, 255);
         border-right: 2px solid rgb(255, 255, 255);
@@ -259,7 +285,7 @@
     &::after {
         content: '';
         position: absolute;
-        inset: 120px;
+        inset: 100px;
         border: 2px solid transparent;
         border-right: 2px solid rgb(134, 23, 255);
         border-left: 2px solid rgb(255, 255, 255);

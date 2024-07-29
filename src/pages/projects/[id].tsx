@@ -22,7 +22,7 @@ export default function ProjectDetails () {
                         <div className="bg-[url('/noise.svg')] inset-0 absolute -z-10 mix-blend-difference dark:mix-blend-normal">&nbsp;</div>
                         <div className={`max-w-6xl mx-auto h-full flex flex-col py-6 gap-10 px-6`}>
                             <div className='w-64'>
-                                <CustomButton title='view_all_projects' onClick={()=> {router.replace('/projects')}}/>
+                                <CustomButton title='view_all_projects' onClick={()=> {router.push('/projects')}}/>
                             </div>
                             <div className='flex gap-x-9 w-1/2 smd:w-full xs:px-4 justify-center items-center'>
                                 <div className={`flex flex-col relative h-24 flex-1 ${styles.border_gradient} justify-center items-center`} >
@@ -120,7 +120,7 @@ export default function ProjectDetails () {
 
                             </div>
                             <div className='mt-10 w-64 self-center mb-[52px] sm:mb-[73px] md:mb-[73px] xs:mb-[52px]'>
-                                <CustomButton title='view_all_projects' onClick={()=> {router.replace('/projects')}}/>
+                                <CustomButton title='view_all_projects' onClick={()=> {router.push('/projects')}}/>
                             </div>
                         </div>
                     </section>

@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useCallback, useState } from 'react'
 import styles from './skills.module.scss'
 import Image from 'next/image';
 import Title from '../core/Title';
@@ -15,7 +15,14 @@ export interface MyCustomCSS extends CSSProperties {
 
 function Skills() {
     const { t } = useTranslation('common')
-    const skills = ["Fastapi", "Django", "flask", "redis", "celery", "rabbitmq", "kubernetes", "elk", "Github/gitlab", "Gitlab-CI/CD", "Jenkins", "caddy",  "mongodb", "postgressql", "dbeaver", "tailwind css", "react-query", "redux", "swift storyboard"]
+    const [onHoverIcon, setonHoverIcon] = useState<string | number>("")
+    const skills = ["Fastapi", "Django", "flask", "redis", "celery", "rabbitmq", "kubernetes", "elk", "Github", "Gitlab-CI/CD", "Jenkins", "caddy",  "mongodb", "postgressql", "dbeaver", "tailwind css", "react-query", "redux", "swift storyboard"]
+    const handleHover = useCallback((e:string | number) => {
+            setonHoverIcon((prev: string | number) => e !== prev ? e : prev)
+            console.log("the curr over : ", onHoverIcon);
+            
+        }, [setonHoverIcon, onHoverIcon])
+
     return (
         <section
             className="w-full bg-darkest dark:bg-gradient-to-b from-[#03011000_0%] to-[#030110_100%] border-none overflow-hidden"
@@ -49,10 +56,22 @@ function Skills() {
                         <div className={`${styles.icon} left-[-50%]`} style={{ '--count': 9, '--idx': 0 } as MyCustomCSS}>
                             {
                                 ["python", "sass", "", "node", "html", "docker", "gitlab", "swagger", "react"].map((e, index) => <>
-                                    <div className={`${styles.imgBx} ${index === 0 ? styles.active : ""} ${[0, 4, 5, 7].includes(index) ? 'w-28 h-28 origin-[330px]' : index == 2 ? "w-8 h-8 bg-white origin-[290px]" : "w-20 h-20 origin-[315px]"}`} style={{ '--i': index + 1 } as MyCustomCSS}>
+                                    <div className={`${styles.imgBx} ${index === 0 ? styles.active : ""} ${[0, 4, 5, 7].includes(index) ? 'w-28 h-28 origin-[330px]' : index == 2 ? "w-8 h-8 bg-white origin-[290px]" : "w-20 h-20 origin-[315px]"}`} style={{ '--i': index + 1 } as MyCustomCSS}
+                                    onMouseOver={
+                                        () => {
+                                            handleHover(e)
+                                        }
+                                    }
+                                    onMouseLeave={
+                                        () => {
+                                            handleHover('')
+                                        }
+                                    }
+                                    >
                                         {
                                             index !== 2 && <Image
                                                 className={`${styles.img}`}
+                                                // src={(onHoverIcon === e ? e + '-icon' : e) + ".svg"}
                                                 src={e + ".svg"}
                                                 height={[0, 4, 5, 7].includes(index) ? 25 : 20}
                                                 width={[0, 4, 5, 7].includes(index) ? 25 : 20}
@@ -72,8 +91,18 @@ function Skills() {
                                     {
                                         [1, "flutter", 'js', 3, "nextjs", "ts", 6].map((e, index) => <>
                                             {
-                                                // index === 2 ? "w-8 h-8 bg-primary left-[75px]" : "w-8 h-8 bg-white -top-10"
-                                                [1, 2, 4, 5].includes(index) && <div className={`${styles.imgBx} ${index === 0 ? styles.active : ""} w-20 h-20 origin-[210px] ${[1, 5].includes(index) ? "w-28 h-28 origin-[210px]" : index === 2 ? "left-[95px]" : index === 4 ? "-top-10 right-7" : ""}`} style={{ '--i': index + 1 } as MyCustomCSS}>
+                                                [1, 2, 4, 5].includes(index) && <div className={`${styles.imgBx} ${index === 0 ? styles.active : ""} w-20 h-20 origin-[210px] ${[1, 5].includes(index) ? "w-28 h-28 origin-[210px]" : index === 2 ? "left-[95px]" : index === 4 ? "-top-10 right-7" : "hover:animate-bounce"}`} style={{ '--i': index + 1 } as MyCustomCSS}
+                                                onMouseOver={
+                                                    () => {
+                                                        handleHover(e)
+                                                    }
+                                                }
+                                                onMouseLeave={
+                                                    () => {
+                                                        handleHover('')
+                                                    }
+                                                }
+                                                >
                                                     {
                                                         <Image
                                                             className={`${styles.img}`}
@@ -91,8 +120,9 @@ function Skills() {
                                 </div>
 
                                 <div className={`${styles.animatedContent} z-30`}>
-
+                                    <span className='top-[45%] text-base text-white absolute uppercase font-black leading-none italic block'>{onHoverIcon === "ts" ? 'typescript' : onHoverIcon === "js" ? 'javascript' : onHoverIcon === "node" ? "nodejs" : onHoverIcon === "react" ? "reactjs" : onHoverIcon}</span>
                                 </div>
+
 
                             </div>
                         </div>
