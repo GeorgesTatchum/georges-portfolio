@@ -21,9 +21,9 @@ export const projects_data: ProjectType[] = [
             }
         ],
         'images': {
-            'cover': "/portfolio/22.webp",
+            'cover': "/portfolio/cover.webp",
             'others': [
-                
+                "/portfolio/1.webp", "/portfolio/2.webp", "/portfolio/3.webp"
             ]
         },
         'stack': [
