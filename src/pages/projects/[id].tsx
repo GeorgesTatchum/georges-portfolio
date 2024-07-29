@@ -82,11 +82,11 @@ export default function ProjectDetails () {
 
                                 </div>
                             </div>
-                            <div className={`mt-5 ${styles.galery_img}`}>
+                            <div className={`mt-5 smd:gap-2 ${styles.galery_img}`}>
                                 {projects_data[Number(router.query.id)].images.others.map((e, index) => (
                                     <div className='flex justify-center items-center' key={index}>
                                         <Image
-                                        className='h-auto max-w-full align-middle inline-block object-cover'
+                                        className='h-auto max-w-full align-middle inline-block object-cover border-[2px] border-[#C4C4C470]'
                                         src={e}
                                         height={1000}
                                         width={1000}
