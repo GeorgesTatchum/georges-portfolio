@@ -81,7 +81,7 @@ const Project = () => {
                         <div className='flex mt-5 pr-4 pl-10 justify-between w-full max-w-[624px]'>
                             <div className='flex gap-6 items-center'>
                                 <button
-                                    onClick={handlePrev} 
+                                    onClick={handleNext} 
                                     className='p-3 bg-black rounded-md dark:bg-white hover:cursor-pointer'>
                                     <ArrowLeft color={theme != 'dark' ? '#FFFFFF' : '#000000'} size={16} />
                                 </button>
@@ -94,7 +94,7 @@ const Project = () => {
                                     </span>
                                 </div>
                                 <button 
-                                    onClick={handleNext} 
+                                    onClick={handlePrev} 
                                     className='p-3 bg-black rounded-md dark:bg-white hover:cursor-pointer'>
                                     <ArrowRight color={theme != 'dark' ? '#FFFFFF' : '#000000'} size={16} />
                                 </button>

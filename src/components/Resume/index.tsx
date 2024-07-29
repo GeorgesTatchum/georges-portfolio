@@ -111,12 +111,12 @@ function ResumeContent(props: { className: string }) {
         <div className={props.className}>
             <div className="dark:bg-white/10 bg-gray bg-opacity-10 rounded-md items-center flex p-4 justify-between">
                 <span className="uppercase text-sm Sfera">{t("meet_me_on")}</span>
-                <div className='flex gap-3 xs:gap-6'>
+                <div className='flex gap-6'>
                     <Link href='https://www.linkedin.com/in/georges-tatchum-b21158265' className="cursor-pointer" target='_blank'>
-                        <Icon.Linkedin size={18} />
+                        <Icon.Linkedin size={18} className='hover:animate-bounce duration-300' />
                     </Link>
-                    <Link href='https://gitlab.com/midoryaga13' className="cursor-pointer" target='_blank'><Icon.Gitlab size={18} /></Link>
-                    <Link href='https://github.com/GeorgesTatchum' className="cursor-pointer" target='_blank'><Icon.Github size={18} /></Link>
+                    <Link href='https://gitlab.com/midoryaga13' className="cursor-pointer" target='_blank'><Icon.Gitlab size={18} className='hover:animate-bounce duration-300' /></Link>
+                    <Link href='https://github.com/GeorgesTatchum' className="cursor-pointer" target='_blank'><Icon.Github size={18} className='hover:animate-bounce duration-300' /></Link>
 
                 </div>
             </div>

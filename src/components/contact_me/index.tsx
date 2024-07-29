@@ -115,7 +115,7 @@ function    Contact() {
                 <div className='Sfera contact-gradient dark:contact-gradient-dark text-8xl sm:text-6xl md:text-7xl xs:text-[40px] uppercase text-center flex flex-col justify-center'>
                     <span className='whitespace-pre-line'>{t("hire_me")}</span>
                 </div>
-                <div className={`${styles.form} w-[320px] -mt-4 z-10 xs:mt-3 bg-white/10`}>
+                <div className={`${styles.form} mddmin:w-[352px] w-[320px] -mt-4 z-10 xs:mt-3 bg-white/10`}>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
                         className={`${styles.formContent}`} style={{ backdropFilter: 'blur(10px)'}}>
