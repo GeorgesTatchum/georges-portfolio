@@ -50,7 +50,7 @@ export default async function handler(req: any, res: any) {
     
           else {
             const mailOptions = {
-                from: `"GEORGES TATCHUM" <${process.env.CONTACT_FORM_USERNAME}>`,
+                from: `"Georges Tatchum" <${process.env.CONTACT_FORM_USERNAME}>`,
                 replyTo: email,
                 to: process.env.PERSONAL_MAIL,
                 subject: 'Nouveau message de contact',
@@ -67,7 +67,8 @@ export default async function handler(req: any, res: any) {
         var template = handlebars.compile(templateHtml);
         var date = new Date(Date.now())
         var finalDate = date.toLocaleString('fr', {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false})
-
+        console.log('the date : ', finalDate);
+        
         var replacements = {name: name, date: finalDate}
         try {
         var htmlToSend = template(replacements);
@@ -81,10 +82,10 @@ export default async function handler(req: any, res: any) {
         }
 
         const mailOptions = {
-            from: `"GEORGES TATCHUM" <${process.env.CONTACT_FORM_USERNAME}>`,
+            from: `"Georges Tatchum" <${process.env.CONTACT_FORM_USERNAME}>`,
             to: email,
             subject: "Réponse automatique",
-            html: template, // html body
+            html: htmlToSend, // html body
           }
       
           // Envoyez l'e-mail
