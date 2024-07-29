@@ -71,8 +71,6 @@ useEffect(() => {
           }
         )
       }
-
-  console.log("is scroll : ", isScrolled);
   
   
   return (
@@ -87,7 +85,7 @@ useEffect(() => {
           <Contact />
           <Footer />
           {
-          <div className={`h-12 w-12 rounded-[4px] right-[10%] mddmin:right-[10%] bg-gray/10 dark:bg-white/10 backdrop-blur-xl z-50 cursor-pointer duration-500 ease-linear flex justify-center items-center ${isScrolled === true ? 'top-[95%] -translate-y-[98%] opacity-100' : 'top-0 opacity-0'} fixed`} onClick={scrollUp}>
+          <div className={`h-12 w-12 rounded-[4px] right-[5%] mddmin:right-[6%] bg-gray/10 dark:bg-white/10 backdrop-blur-xl z-50 cursor-pointer duration-500 ease-linear flex justify-center items-center ${isScrolled === true ? 'top-[95%] -translate-y-[98%] opacity-100' : 'top-0 opacity-0'} fixed`} onClick={scrollUp}>
               <Image className='hover:-translate-y-1 duration-200 ease-linear' src={theme === 'dark' ? '/floating.svg' : '/floating_d.svg'} width={24} height={24} alt='floating' />
           </div>
         }
