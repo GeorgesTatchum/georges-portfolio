@@ -20,41 +20,14 @@ const Project = () => {
     const [ activePosition, setActivePosition ] = useState<number>(0)
     const handlePrev = useCallback(() => setCurrentIndexProject((prev:number) => prev > 0 ? prev - 1 : 2), [setCurrentIndexProject])
     const handleNext = useCallback(() => setCurrentIndexProject((prev:number) => prev < 2 ? prev + 1 : 0), [setCurrentIndexProject])
-    // const [isScrolled, setIsScrolled] = useState(false)
 
     useEffect(() => {
         const position = (currentIndexProject * 320) + (currentIndexProject * 24)
         setActivePosition(position)
     }, [currentIndexProject])
-    // useEffect(() => {
-    //     window.addEventListener("scroll", ()=> {
-    //       if(window.scrollY < 100){
-    //         setIsScrolled(false)
-    //       }
-    //       else {
-    //         setIsScrolled(true)
-    //       }
-    //     })
-    //   }, [])
-    
-    //   const scrollUp = () => {
-    //     window.scrollTo(
-    //       {
-    //         top: 0,
-    //         behavior: "smooth"
-    //       }
-    //     )
-    //   }
-
     return (
         <section className='w-full py-8 dark:bg-gradient-to-b from-[#030110_0%] to-[#030110_100%] border-none' id='my_project'>
             <div className='max-w-6xl mx-auto px-4 m-4'>
-            {/* {
-          isScrolled && 
-          <div className={`h-12 w-12 rounded-[4px] fixed bottom-[5%] right-[25%] mddmin:right-[18%] bg-gray/10 backdrop-blur-xl z-50 flex justify-center items-center cursor-pointer`} onClick={scrollUp}>
-              <ArrowUpShort size={24}/>
-          </div>
-        } */}
             <Title title={t('my_project')} />
             </div>
             {
