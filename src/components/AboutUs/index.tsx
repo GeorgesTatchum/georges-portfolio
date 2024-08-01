@@ -30,7 +30,7 @@ export const AboutUs = () => {
   // }, [element, t]);
 
   return (
-    <section className='h-[calc(100dvh-5rem)] max-h-[756px] mdd:h-auto w-full mb-3' id="about_us">
+    <section className='max-h-[756px] mdd:h-auto w-full mb-3' id="about_us">
       <div className='relative flex h-full w-full'>
         <div className='h-full mdd:overflow-x-hidden w-full flex mdd:justify-center 2xl:justify-center' id='cover_image'>
           <Image
