@@ -102,7 +102,7 @@ export default function ProjectDetails () {
                                 <div className={`flex gap-6 md:gap-18 flex-wrap xs:flex-nowrap justify-items-center xs:flex-col mt-10`}>
 
                                     {projects_data[Number(router.query.id)].stack.map((e, index) => e.length > 0 ? (
-                                        <div key={index} className={`sm:w-[45%] md:w-[45%] xs:max-w-xs mddmin:flex-1 p-6 bg-cover bg-darkest/10 dark:bg-white/10 rounded-[15px] flex-col border-2 border-gray/10 hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer shadow ${index === 1 ? 'self-end' : 'self-start'} ${index === 0 ? styles.stack_bg_1 : index === 1 ? styles.stack_bg_2 : styles.stack_bg_3}`} style={{ backdropFilter: 'blur(10px)'}}>
+                                        <div key={index} className={`sm:w-[45%] md:w-[45%] xs:max-w-xs mddmin:flex-1 p-6 bg-cover bg-darkest/10 dark:bg-white/10 rounded-[15px] flex-col border-2 border-gray/10 hover:-translate-y-3 ease duration-[600ms] transition-all cursor-pointer ${styles.c_shadow} ${index === 1 ? 'self-end' : 'self-start'} ${index === 0 ? styles.stack_bg_1 : index === 1 ? styles.stack_bg_2 : styles.stack_bg_3}`} style={{ backdropFilter: 'blur(10px)'}}>
                                             <span className={`uppercase font-black leading-none italic ${index === 0 ? 'text-[#007aff] dark:text-green' : index === 1 ? 'text-primary' : 'text-[#BE9DEA]'} text-left text-2xl`}>
                                             {index === 0 ? 'Back-end & DEVOPS STACK' : index === 1 ? 'WEB FRONTEND STACK' : 'MOBILE STACK' }
                                             </span>
