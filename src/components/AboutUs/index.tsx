@@ -72,6 +72,11 @@ export const AboutUs = () => {
 
         </div>
       </div>
+      {/* <div className={`absolute sm:-bottom-[2%] md:-bottom-[2%] lg:bottom-0 xl:bottom-0 2xl:bottom-0 xs:bottom-[6%] left-1/2 md:left-[45%] sm:left-[45%] xs:left-[40%] ${styles.mouse_move}`}>
+        <Link href={'#my_resume'}>
+          <Image className='' src="/mouse.svg" alt="mouse_image" width={100} height={100} />
+        </Link>
+      </div> */}
     </section>
   )
 }

@@ -1,0 +1,21 @@
+.btn {
+    transition: 0.4s all ease-in-out 0s;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: unset;
+        right: 0;
+        width: 0;
+        height: inherit;
+        z-index: 1;
+        background-color: #7B00FF;
+        transition: 0.4s all ease-in-out 0s;
+        &:hover {
+            right: unset;
+            left: 0;
+            width: inherit;
+        }
+    }
+}

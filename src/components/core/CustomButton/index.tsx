@@ -1,5 +1,6 @@
 import useTranslation from 'next-translate/useTranslation'
 import React from 'react'
+import styles from './custom_button.module.scss'
 
 interface CustomButtonProps {
     title: string,
