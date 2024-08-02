@@ -7,3 +7,41 @@
 .cardListWrapper {
     
 }
+
+.arrow_left {
+    &:hover {
+        transition: all .5s;
+        transform-origin: center center;
+        transform: translateX(0px);
+        animation: trans .6s ease-in-out alternate infinite;
+
+        @keyframes trans {
+            from {
+                transform: translateX(0px)
+            }
+            to {
+                transform: translateX(-2px)
+            }
+            
+        }
+    }
+}
+
+.arrow_right {
+    &:hover {
+        transition: all .5s;
+        transform-origin: center center;
+        transform: translateX(0px);
+        animation: trans .6s ease-in-out alternate infinite;
+
+        @keyframes trans {
+            from {
+                transform: translateX(0px)
+            }
+            to {
+                transform: translateX(2px)
+            }
+            
+        }
+    }
+}
