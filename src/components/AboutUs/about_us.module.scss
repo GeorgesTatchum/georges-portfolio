@@ -24,3 +24,23 @@
         color: transparent
     }
 }
+
+.mouse_move {
+    transition: all .5s;
+    transform-origin: center center;
+    transform: translateY(0px);
+    animation: trans .5s ease-in-out alternate infinite;
+
+    @keyframes trans {
+        from {
+            transform: translateY(0px)
+        }
+        to {
+            transform: translateY(-3px)
+        }
+        
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
