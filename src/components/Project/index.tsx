@@ -32,7 +32,7 @@ const Project = () => {
             </div>
             {
                 !lgd ? 
-                <div className={styles.frame}>
+                <div className={`${styles.frame} mddmin:justify-center`}>
                     <Image
                         className={`${styles.image} xs:hidden`}
                         src={theme === 'dark' ? "/project_card.png" : "/project_card_white.png"}
@@ -77,7 +77,7 @@ const Project = () => {
                         </div>
                     </div>
                 </div> :
-                <div className='flex flex-col overflow-hidden'>
+                <div className='flex flex-col overflow-hidden justify-center'>
                     <div className={styles.list} 
                     style={{'--translate-x': `-${activePosition}px`} as React.CSSProperties}
                     >
