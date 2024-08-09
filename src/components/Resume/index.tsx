@@ -60,7 +60,7 @@ export default function Resume() {
         <section
             className='w-full flex flex-col gap-6 bg-contain bg-no-repeat'
             id="my_resume"
-            style={{ background: `url(/color_splash.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: '40% 20%', backgroundSize: '600px' }}>
+            style={{ background: `url(/color_splash.svg)`, backgroundRepeat: 'no-repeat', backgroundPosition: '40% 20%', backgroundSize: '600px' }}>
             <div className='w-full flex max-w-6xl mx-auto px-4 md:justify-around xs:justify-center'>
                 <div className='flex justify-between gap-6 w-full'>
                     <div className='flex gap-7 relative xs:flex-col xs:gap-x-5 flex-1'>
@@ -112,12 +112,11 @@ function ResumeContent(props: { className: string }) {
             <div className="dark:bg-white/10 bg-gray bg-opacity-10 rounded-md items-center flex p-4 justify-between">
                 <span className="uppercase text-sm Sfera">{t("meet_me_on")}</span>
                 <div className='flex gap-6'>
-                    <Link href='https://www.linkedin.com/in/georges-tatchum-b21158265' className="cursor-pointer" target='_blank'>
+                    <Link href='https://www.linkedin.com/in/georges-tatchum-b21158265' className="cursor-pointer" target='_blank' aria-label="Lien vers mon linkedin">
                         <Icon.Linkedin size={18} className='hover:animate-bounce duration-300' />
                     </Link>
-                    <Link href='https://gitlab.com/midoryaga13' className="cursor-pointer" target='_blank'><Icon.Gitlab size={18} className='hover:animate-bounce duration-300' /></Link>
-                    <Link href='https://github.com/GeorgesTatchum' className="cursor-pointer" target='_blank'><Icon.Github size={18} className='hover:animate-bounce duration-300' /></Link>
-
+                    <Link href='https://gitlab.com/midoryaga13' className="cursor-pointer" target='_blank' aria-label="Lien vers mon gitlab"><Icon.Gitlab size={18} className='hover:animate-bounce duration-300' /></Link>
+                    <Link href='https://github.com/GeorgesTatchum' className="cursor-pointer" target='_blank' aria-label="Lien vers mon github"><Icon.Github size={18} className='hover:animate-bounce duration-300' /></Link>
                 </div>
             </div>
             <div className='flex gap-10 justify-end'>

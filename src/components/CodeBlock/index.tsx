@@ -1,7 +1,7 @@
 import '@/components/CodeBlock/'
 import parse from 'html-react-parser'
 import { Roboto_Mono } from 'next/font/google'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 const robotMono = Roboto_Mono({ subsets: ['latin'] })
 
@@ -12,7 +12,7 @@ export const CodeBlock = (props: { description: string, className?: string, seco
     const textRef = useRef(null);
     const [lineCount, setLineCount] = useState(0);
 
-    const calculateLineCount = () => {
+    const calculateLineCount = useCallback(() => {
         if (textRef.current) {
             const element = textRef.current as HTMLElement;
             const style = window.getComputedStyle(element);
@@ -26,7 +26,7 @@ export const CodeBlock = (props: { description: string, className?: string, seco
             // The total number of lines is the sum of the measured lines and the explicit line breaks
             setLineCount(Math.ceil(numberOfLines) + lineBreaks);
         }
-    };
+    },  [description]);
 
     useEffect(() => {
         // Calculate the line count after the component is mounted
@@ -36,7 +36,7 @@ export const CodeBlock = (props: { description: string, className?: string, seco
         return () => {
             window.removeEventListener('resize', calculateLineCount);
         };
-    }, []);
+    }, [calculateLineCount]);
 
     return (
         <div className={`flex flex-col gap-3 p-3 dark:bg-[#0A1A22] text-sm ${className} relative bg-white rounded-lg ${robotMono.className}`}>

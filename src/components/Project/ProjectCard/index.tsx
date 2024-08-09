@@ -39,7 +39,7 @@ const ProjectCard = (props: CardProps) => {
                     </span>
                 </div>
             </div>
-            <CustomButton title={t('open_project')} className='mt-[6px] w-fit' onClick={()=> {
+            <CustomButton title={'open_project'} className='mt-[6px] w-fit' onClick={()=> {
                 router.push(`/projects/${props.id}`)
             }}/>
         </div >
