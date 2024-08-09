@@ -54,7 +54,9 @@ const Project = () => {
                         <div className='flex mt-5 pr-4 pl-10 justify-between w-full max-w-[624px]'>
                             <div className='flex gap-6 items-center'>
                                 <button
-                                    onClick={handlePrev} 
+                                    onClick={handlePrev}
+                                    id="buttonLeftList"
+                                    title="LeftList"
                                     className='p-3 bg-black rounded-md dark:bg-white hover:cursor-pointer'>
                                     <ArrowLeft color={theme != 'dark' ? '#FFFFFF' : '#000000'} size={16} />
                                 </button>
@@ -68,12 +70,14 @@ const Project = () => {
                                 </div>
                                 <button 
                                     onClick={handleNext} 
+                                    id="buttonRightList"
+                                    title="RightList"
                                     className='p-3 bg-black rounded-md dark:bg-white hover:cursor-pointer'>
                                     <ArrowRight color={theme != 'dark' ? '#FFFFFF' : '#000000'} size={16} />
                                 </button>
 
                             </div>
-                            <CustomButton title={t('see_more')} className='mt-[6px] w-[171px]' onClick={()=> {router.push('/projects')}}/>
+                            <CustomButton title={'see_more'} className='mt-[6px] w-[171px]' onClick={()=> {router.push('/projects')}}/>
                         </div>
                     </div>
                 </div> :
@@ -115,7 +119,7 @@ const Project = () => {
                             </button>
 
                         </div>
-                        <CustomButton title={t('see_more')} className='mt-[6px] w-[171px]' onClick={()=> {router.push('/projects')}}/>
+                        <CustomButton title={'see_more'} className='mt-[6px] w-[171px]' onClick={()=> {router.push('/projects')}}/>
                     </div>
                     <div className='flex justify-center'>
                         <Image
